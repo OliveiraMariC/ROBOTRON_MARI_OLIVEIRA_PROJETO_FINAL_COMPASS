@@ -21,7 +21,7 @@
 ````
  - Python >  3.8.2
 
- - Robot Framework > 5.0.1
+ - 🤖 Robot Framework > 5.0.1
 
  - git >  2.35.1
 
