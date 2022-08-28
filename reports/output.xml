@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20220827 21:03:55.031" rpa="false" schemaversion="3">
+<suite id="s1" name="Base" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\base.robot">
+<test id="s1-t1" name="Cenario: GET Todos os Usuarios 200" line="12">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>http://localhost:3000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220827 21:03:55.152" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220827 21:03:55.152" endtime="20220827 21:03:55.152"/>
+</kw>
+<status status="PASS" starttime="20220827 21:03:55.151" endtime="20220827 21:03:55.152"/>
+</kw>
+<kw name="GET Endpoint /usuarios">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220827 21:03:55.162" level="INFO">GET Request : url=http://localhost:3000/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220827 21:03:55.163" level="INFO">GET Response : url=http://localhost:3000/usuarios 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'd5060750-23e7-434d-9f3c-8d32e3bed2be', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4099', 'Date': 'Sun, 28 Aug 2022 00:03:55 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "quantidade": 20,
+    "usuarios": [
+        {
+            "nome": "Fulano da Silva",
+            "email": "fulano@qa.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "0uxuPY0cbmQhpEz1"
+        },
+        {
+            "nome": "Christopher Patel MD",
+            "email": "ztaylor@example.com",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "1S84uZskYBhliKbt"
+        },
+        {
+            "nome": "User18",
+            "email": "user18@gmail.com",
+            "password": "user3",
+            "administrador": "true",
+            "_id": "27LJRnn13JxiFtTG"
+        },
+        {
+            "nome": "User20",
+            "email": "user20@gmail.com",
+            "password": "user20",
+            "administrador": "true",
+            "_id": "2bCHGlX06aGIEyaA"
+        },
+        {
+            "nome": "User17",
+            "email": "user17@gmail.com",
+            "password": "user3",
+            "administrador": "true",
+            "_id": "4XLkckQi22PW8kpj"
+        },
+        {
+            "nome": "User15",
+            "email": "user15@gmail.com",
+            "password": "user3",
+            "administrador": "true",
+            "_id": "9EtRU1rVIwUuP2Sz"
+        },
+        {
+            "nome": "user1",
+            "email": "user1a@gmail.com",
+            "password": "123",
+            "administrador": "true",
+            "_id": "9cw0RFCxZo80hpBq"
+        },
+        {
+            "nome": "User6",
+            "email": "user8@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "AQOyn1R9VSsuxN4j"
+        },
+        {
+            "nome": "user2",
+            "email": "user2a@gmail.com",
+            "password": "123",
+            "administrador": "true",
+            "_id": "DSJJAjO7zWZbNnBl"
+        },
+        {
+            "nome": "User5",
+            "email": "user5@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "PWtNVH72Hsq6WL0N"
+        },
+        {
+            "nome": "User4",
+            "email": "user4@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "PdbjRkAQVQF6Dszz"
+        },
+        {
+            "nome": "User19",
+            "email": "user19@gmail.com",
+            "password": "user19",
+            "administrador": "true",
+            "_id": "RvRKWKGSjyIgAnZ0"
+        },
+        {
+            "nome": "Stephen Jackson",
+            "email": "clynch@example.com",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "VsGqmj6tdqtQJ0MX"
+        },
+        {
+            "nome": "User8",
+            "email": "user9@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "X0oCrGAA6KvgCsPG"
+        },
+        {
+            "nome": "Sarah Haynes",
+            "email": "gabrielnguyen@example.com",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "hfXqE1U1siHYV92u"
+        },
+        {
+            "nome": "EU EXISTO",
+            "email": "jamesb@qa.com.br",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "iTa32T9XHJsFbGuS"
+        },
+        {
+            "nome": "User22",
+            "email": "user22@gmail.com",
+            "password": "user22",
+            "administrador": "true",
+            "_id": "kj0ZPHuHk61moXSJ"
+        },
+        {
+            "nome": "User3",
+            "email": "user3@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "lMxWoBpIL5s8F2Mx"
+        },
+        {
+            "nome": "mari",
+            "email": "mari@gmail.com",
+            "password": "123",
+            "administrador": "true",
+            "_id": "m6Qq23vkDqU3mISX"
+        },
+        {
+            "nome": "User21",
+            "email": "user21@gmail.com",
+            "password": "user20",
+            "administrador": "true",
+            "_id": "njNlATN3XSltWyUb"
+        }
+    ]
+} 
+ </msg>
+<msg timestamp="20220827 21:03:55.163" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220827 21:03:55.153" endtime="20220827 21:03:55.163"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response:${response}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220827 21:03:55.163" endtime="20220827 21:03:55.164"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220827 21:03:55.165" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220827 21:03:55.164" endtime="20220827 21:03:55.165"/>
+</kw>
+<status status="PASS" starttime="20220827 21:03:55.153" endtime="20220827 21:03:55.165"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220827 21:03:55.165" endtime="20220827 21:03:55.166"/>
+</kw>
+<status status="PASS" starttime="20220827 21:03:55.165" endtime="20220827 21:03:55.166"/>
+</kw>
+<kw name="Printar Conteudo Response">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Nome: ${response.json()["usuarios"][0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220827 21:03:55.167" endtime="20220827 21:03:55.168"/>
+</kw>
+<status status="PASS" starttime="20220827 21:03:55.167" endtime="20220827 21:03:55.168"/>
+</kw>
+<doc>-Cria a sesssão
+-Busca todos os usuários
+-Valida o status 200
+-Printa o conteúdo na resposta</doc>
+<tag>USERGET200</tag>
+<status status="PASS" starttime="20220827 21:03:55.149" endtime="20220827 21:03:55.168"/>
+</test>
+<doc>Arquivo simples para requisições HTTP em APIs REST</doc>
+<status status="PASS" starttime="20220827 21:03:55.033" endtime="20220827 21:03:55.170"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">USERGET200</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Base">Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
