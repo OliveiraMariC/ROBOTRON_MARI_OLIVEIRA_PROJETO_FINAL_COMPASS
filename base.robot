@@ -24,9 +24,25 @@ Cenario: GET Todos os Usuarios 200
     Validar Status Code "200"
     Printar Conteudo Response   
 
+Cenario: GET Usuario Especifico 200
+    
+    [Documentation]        -Cria a sesssão
+    ...                    -Busca o usuário com ID informado
+    ...                    -Valida o usuário com o ID informado
+    ...                    -Valida o status 200
+    ...                    -Printa o conteúdo na resposta
+    
+    [Tags]    USERGETID200
+   
+
+    Criar Sessao
+    GET Endpoint /usuarios com id "/njNlATN3XSltWyUb"
+    Validar o Usuario com id "/njNlATN3XSltWyUb"
+    Validar Status Code "200"
+    Printar Conteudo Response 
 *** Keywords ***
 GET Endpoint /usuarios 
-    ${response}       GET On Session       serverest    /usuarios
+    ${response}       GET On Session       serverest    /usuarios/
     Log To Console                         Response:${response}
     Set Global Variable                             ${response} 
 
