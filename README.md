@@ -52,13 +52,10 @@
    
 - pip install robotframework
 
--
+- robot --version
 ````
 
-Após a instalação bem feita, devemos ser capazes de ver as versões do interpretador e do robô usando a opção –version.
 
-robot --version
-rebot --version
 
 
 Etapa 4: verificar se a estrutura do robô está instalada corretamente
@@ -69,7 +66,7 @@ pip show robotframework
 
 
 
-### ✔️​ Execução dos testes robot  
+### 🤖​ Execução dos testes robot  
 
 ```
 - robot -d ./reports -i "nome da [TAG]" base.robot 
