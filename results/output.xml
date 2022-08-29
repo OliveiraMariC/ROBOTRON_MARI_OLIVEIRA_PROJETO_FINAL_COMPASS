@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20220828 17:14:25.589" rpa="false" schemaversion="3">
+<suite id="s1" name="Robotron Mari Oliveira Projeto Final Compass" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass">
+<suite id="s1-s1" name="Base" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\base.robot">
+<test id="s1-s1-t1" name="Cenario: PUT Editar Usuario 200" line="66">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>http://localhost:3000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220828 17:14:25.787" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220828 17:14:25.787" endtime="20220828 17:14:25.789"/>
+</kw>
+<status status="PASS" starttime="20220828 17:14:25.786" endtime="20220828 17:14:25.789"/>
+</kw>
+<kw name="PUT Endpoint /usuarios">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>&amp;{payload}</var>
+<arg>nome=U26</arg>
+<arg>email=u27@gmail.com</arg>
+<arg>password=U26</arg>
+<arg>administrador=true</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220828 17:14:25.792" level="INFO">&amp;{payload} = { nome=U26 | email=u27@gmail.com | password=U26 | administrador=true }</msg>
+<status status="PASS" starttime="20220828 17:14:25.791" endtime="20220828 17:14:25.793"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios/ iNFbsUAXU3EFhsWc</arg>
+<arg>data=&amp;{payload}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20220828 17:14:25.807" level="INFO">PUT Request : url=http://localhost:3000/usuarios/%20iNFbsUAXU3EFhsWc 
+ path_url=/usuarios/%20iNFbsUAXU3EFhsWc 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '62', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=nome=U26&amp;email=u27%40gmail.com&amp;password=U26&amp;administrador=true 
+ </msg>
+<msg timestamp="20220828 17:14:25.809" level="INFO">PUT Response : url=http://localhost:3000/usuarios/%20iNFbsUAXU3EFhsWc 
+ status=201, reason=Created 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'a104b20e-3608-4d00-b1b5-cecd8112d303', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Date': 'Sun, 28 Aug 2022 20:14:25 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "message": "Cadastro realizado com sucesso",
+    "_id": "ycMlkxo1XaHvluib"
+} 
+ </msg>
+<msg timestamp="20220828 17:14:25.811" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220828 17:14:25.794" endtime="20220828 17:14:25.812"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220828 17:14:25.813" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220828 17:14:25.813" endtime="20220828 17:14:25.815"/>
+</kw>
+<status status="PASS" starttime="20220828 17:14:25.790" endtime="20220828 17:14:25.815"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20220828 17:14:25.818" level="FAIL">'201 == 200' should be true.</msg>
+<status status="FAIL" starttime="20220828 17:14:25.817" endtime="20220828 17:14:25.820"/>
+</kw>
+<status status="FAIL" starttime="20220828 17:14:25.816" endtime="20220828 17:14:25.820"/>
+</kw>
+<kw name="Printar Conteudo Response">
+<status status="NOT RUN" starttime="20220828 17:14:25.822" endtime="20220828 17:14:25.822"/>
+</kw>
+<doc>-Cria a sessão
+-edita o usuário
+-Valida status code
+-Printa o conteúdo na resposta</doc>
+<tag>USERPUT</tag>
+<status status="FAIL" starttime="20220828 17:14:25.784" endtime="20220828 17:14:25.823">'201 == 200' should be true.</status>
+</test>
+<doc>Arquivo simples para requisições HTTP em APIs REST</doc>
+<status status="FAIL" starttime="20220828 17:14:25.631" endtime="20220828 17:14:25.825"/>
+</suite>
+<status status="FAIL" starttime="20220828 17:14:25.594" endtime="20220828 17:14:25.830"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">USERPUT</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robotron Mari Oliveira Projeto Final Compass">Robotron Mari Oliveira Projeto Final Compass</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Base">Robotron Mari Oliveira Projeto Final Compass.Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
