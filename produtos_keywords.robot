@@ -14,11 +14,10 @@ GET Endpoint /produtos
     Set Global Variable         ${response}
 POST Endpoint /produtos
     &{header}                  Create Dictionary        Authorization=${token_auth}
-    &{payload}                 Create Dictionary        nome=P7                 preco=110        descricao=P5        quantidade=2
+    &{payload}                 Create Dictionary        nome=P9                 preco=110        descricao=P9        quantidade=100
     ${response}                POST On Session          serverest       /produtos        data=&{payload}        headers=${header}
     Log To Console             Produto: ${response.content}
     Set Global Variable                 ${response}
-
 DELETE Endpoint /produtos
     &{header}                  Create Dictionary        Authorization=${token_auth}
     ${response}                DELETE On Session        serverest       /produtos/${id_produto}                headers=${header}

@@ -70,14 +70,15 @@ Cenario: GET Todos os Produtos 200
     GET Endpoint /produtos
     Validar Status Code "200"
 
+#erro 405(não define qual tipo de erro bug )
 Cenario: POST Cadastrar Produto
     [Tags]    POSTCREATPROD
     Criar Sessao
     Fazer Login e Armazenar Token
     POST Endpoint /produtos
+    DELETE Endpoint /produtos
     Validar Status Code "201"
-
-#Alterar os dados do produto no arquivo produto_ keywords
+    
 Cenario: DELETE Excluir Produto 200
     [Tags]    DELPROD
     Criar Sessao
@@ -92,19 +93,10 @@ Cenario: GET Carrinhos 200
     Criar Sessao
     GET Endpoint /carrinhos
     Validar Status Code "200"
-Cenario: POST Endpoint Carrinho 200
-    [Tags]    POSTCAR
-    Criar Sessao
-    Fazer Login e Armazenar Token
-    Criar Carrinho e Armazenar ID
-    DELETE Endpoint/carrinhos/concluir-compra
 
-Cenario: Cadastrar Carrinho 200
-    [Tags]    CARCREAT
+Cenario Criar Carrinho 201
     Criar Sessao
     Fazer Login e Armazenar Token
-    Criar Carrinho e Armazenar ID
-    
 
 *** Keywords ***  
 Criar Sessao

@@ -1,0 +1,26 @@
+{
+    "user_valido": {
+        "nome": "EU EXISTO",
+        "email": "jamesb@qa.com.br",
+        "password": "teste123",
+        "administrador": "true"
+    },
+    "user_invalido": {
+        "nome": "EU NÃO EXISTO",
+        "email": "fulano@qa.com",
+        "password": "teste",
+        "administrador": "true"
+    },
+    "user_sem_senha": {
+        "nome": "EU NÃO TENHO SENHA",
+        "email": "lilgab@qa.com.br",
+        "password": "",
+        "administrador": "true"
+    },
+    "user_sem_email": {
+        "nome": "EU NÃO TENHO EMAIL",
+        "email": "",
+        "password": "teste123",
+        "administrador": "true"
+    }
+}
