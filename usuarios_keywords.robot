@@ -27,18 +27,22 @@ POST Endpoint /usuarios Administrador
     
 POST Endpoint /usuarios nao Administrador 
     &{payload}                  Create Dictionary        nome=U40        email=u40@gmail.com        password=U22        administrador=false
-    ${response}                 POST On Session          serverest       /usuarios                          data=&{payload}
+    ${response}                 POST On Session          serverest       /usuarios    expected_status=any                          data=&{payload}
     Log To Console    Response: ${response}
     Set Global Variable         ${response}
     
-       
+POST Endpoint /usuarios sem Email
+    &{payload}        Create Dictionary        nome=U40        email=        password=U22        administrador=false
+    ${response}            POST On Session          serverest       /usuarios                             data=&{payload}
+    Log To Console    Response: ${response}
+    Set Global Variable         ${response}     
 PUT Endpoint /usuarios
     &{payload}                  Create Dictionary        nome=U2        email=u30@gmail.com        password=U22        administrador=true
     ${response}                 PUT On Session           serverest       /usuarios/iNFbsUAXU3EFhsWc        data=&{payload}
     Log To Console    Response: ${response}
     Set Global Variable         ${response}
 DELETE Endpoint /usuarios
-    ${response}                DELETE On Session           serverest       /usuarios/g1THkMM8Lmq254AG  
+    ${response}                DELETE On Session           serverest       /usuarios/l5PjcHylqtF4JguG  
     Log To Console    Response:${response}      
     Set Global Variable        ${response}    
 

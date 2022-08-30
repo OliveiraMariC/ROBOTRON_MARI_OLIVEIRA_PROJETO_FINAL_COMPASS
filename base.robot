@@ -15,29 +15,19 @@ ${token_auth}
 *** Test Cases ***
 
 #*********************USUÁRIOS***********************
+
+#Requisições Simples
 Cenario: GET Todos os Usuarios 200
-    [Tags]    USERGET
+    [Tags]    GETUSER
     Criar Sessao
     GET Endpoint /usuarios
     Validar Status Code "200"
-
-Cenario POST Cadastrar Usuarios Administrador 201
-    [Tags]        POSTUSER_AD
-    Criar Sessao
-    Criar Usuario Adm e Armazenar ID
-    Validar Ter Criado Usuario
-    DELETE Endpoint /usuarios
-    Validar Status Code "200"
     
-
-Cenario POST Cadastrar Usuarios Não Administrador 201
-    [Tags]        POSTUSER_NAD
+Cenario: POST Endpoint /usuarios sem Email
+    [Tags]    POSTUSERSE
     Criar Sessao
-    Criar Usuario Nao Adm e Armazenar ID
-    Validar Ter Criado Usuario
-    DELETE Endpoint /usuarios
-    Validar Status Code "200"
-
+    POST Endpoint /usuarios sem Email
+    Validar Status Code "400"
 Cenario: PUT Editar Usuario 200 
     [Tags]        PUTUSER   
     Criar Sessao
@@ -47,6 +37,23 @@ Cenario: PUT Editar Usuario 200
 Cenario: DELETE Excluir Usuario 200
     [Tags]    DELUSER
     Criar Sessao
+    DELETE Endpoint /usuarios
+    Validar Status Code "200"
+
+#Encadeamentos
+Cenario POST Cadastrar Usuarios Não Administrador 201
+    [Tags]        POSTUSER_NAD
+    Criar Sessao
+    Criar Usuario Nao Adm e Armazenar ID
+    Validar Ter Criado Usuario
+    DELETE Endpoint /usuarios
+    Validar Status Code "200"
+
+Cenario POST Cadastrar Usuarios Administrador 201
+    [Tags]        POSTUSER_AD
+    Criar Sessao
+    Criar Usuario Adm e Armazenar ID
+    Validar Ter Criado Usuario
     DELETE Endpoint /usuarios
     Validar Status Code "200"
 #********************LOGIN***************************
@@ -74,7 +81,7 @@ Cenario: POST Cadastrar Produto
 Cenario: DELETE Excluir Produto 200
     [Tags]    DELPROD
     Criar Sessao
-    Criar Usuario Adm e Armazenar ID
+    Fazer Login e Armazenar Token
     Criar Produto e Armazenar ID
     DELETE Endpoint /produtos
     Validar Status Code "200"

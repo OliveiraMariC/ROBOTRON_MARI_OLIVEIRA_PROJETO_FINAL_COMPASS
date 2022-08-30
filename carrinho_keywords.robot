@@ -15,7 +15,7 @@ GET Endpoint /carrinhos
     Log To Console                                  Response:${response}
     Set Global Variable         ${response}
 GET Endpoint /carrinho/id
-      ${response}                 GET On Session      serverest    /carrinhos/${id_carrinho}    expected_status=any
+    ${response}                 GET On Session      serverest    /carrinhos/${id_carrinho}    expected_status=any
     Log To Console                                  Response:${response}
     Set Global Variable         ${response}    
 POST Endpoint /carrinhos
