@@ -1,117 +1,105 @@
-
 # Sessão para configuração, documentação, imports de arquivos e libraries
 *** Settings ***
+
 Documentation       Arquivo simples para requisições HTTP em APIs REST
-Library    RequestsLibrary
+Resource    ./usuarios_keywords.robot
+Resource    ./login_keywords.robot
+Resource    ./produtos_keywords.robot
+Resource    ./carrinho_keywords.robot
 
 #Sessão para setagem de variáveis para utilização
 *** Variables ***
-
+${response}
+${token_auth}
 #Sessão para a criação dos cenários
 *** Test Cases ***
-Cenario: GET Todos os Usuarios 200
-    [Documentation]        -Cria a sesssão
-    ...                    -Busca todos os usuários
-    ...                    -Valida o status 200
-    ...                    -Printa o conteúdo na resposta
-    
-    [Tags]    USERGET200
-   
 
+#*********************USUÁRIOS***********************
+Cenario: GET Todos os Usuarios 200
+    [Tags]    USERGET
     Criar Sessao
     GET Endpoint /usuarios
     Validar Status Code "200"
-    Printar Conteudo Response  
-
-Cenario: GET Usuario Especifico 200
-    [Documentation]        -Cria a sesssão
-    ...                    -Busca o usuário com ID informado
-    ...                    -Valida o usuário com o ID informado
-    ...                    -Valida o status 200
-    ...                    -Printa o conteúdo na resposta
-    
-    [Tags]       USERGETID200
-   
-
-    Criar Sessao
-    GET Endpoint /usuarios/id "njNlATN3XSltWyUb"
-    Validar o Usuario com id "njNlATN3XSltWyUb"
-    Validar Status Code "200"
-    Printar Conteudo Response 
 
 Cenario POST Cadastrar Usuarios Administrador 201
-    [Documentation]        -Cria a sessão
-    ...                    -Cadastra um novo usuário administrador
-    ...                    -Valida o status code
-    ...                    -Printa o conteúdo na resposta    
-   
-    [Tags]        USERPOSTAD
+    [Tags]        POSTUSER_AD
     Criar Sessao
-    POST Endpoint /usuarios Administrador
-    Validar Status Code "201"
-    Printar Conteudo Response
+    Criar Usuario Adm e Armazenar ID
+    Validar Ter Criado Usuario
+    DELETE Endpoint /usuarios
+    Validar Status Code "200"
+    
 
 Cenario POST Cadastrar Usuarios Não Administrador 201
-    [Documentation]        -Cria a sessão
-    ...                    -Cadastra um novo usuário não administrador
-    ...                    -Valida o status code
-    ...                    -Printa o conteúdo na resposta    
-   
-    [Tags]        USERPOSTNAD
+    [Tags]        POSTUSER_NAD
     Criar Sessao
-    POST Endpoint /usuarios nao Administrador
-    Validar Status Code "201"
-    Printar Conteudo Response
+    Criar Usuario Nao Adm e Armazenar ID
+    Validar Ter Criado Usuario
+    DELETE Endpoint /usuarios
+    Validar Status Code "200"
 
 Cenario: PUT Editar Usuario 200 
-    [Documentation]        -Cria a sessão
-    ...                    -edita o usuário
-    ...                    -Valida status code
-    ...                    -Printa o conteúdo na resposta
-    [Tags]        USERPUT   
+    [Tags]        PUTUSER   
     Criar Sessao
     PUT Endpoint /usuarios
     Validar Status Code "200"
-    Printar Conteudo Response
 
 Cenario: DELETE Excluir Usuario 200
-    [Documentation]        -Cria a sessão
-    ...                    -exclui o usuário com id informado
-    ...                    -Valida status code
-    ...                    -Printa o conteúdo na resposta
-    [Tags]        USERDELETE
-
+    [Tags]    DELUSER
     Criar Sessao
     DELETE Endpoint /usuarios
     Validar Status Code "200"
-    Printar Conteudo Response
-*** Keywords ***
-GET Endpoint /usuarios 
-    ${response}                GET On Session      serverest    /usuarios
-    Log To Console                                 Response:${response}
-    Set Global Variable        ${response} 
+#********************LOGIN***************************
+Cenario: POST Realizar Login 200
+    [Tags]        POSTLOGIN
+    Criar Sessao
+    POST Endpoint /login
+    Validar Status Code "200"
 
-GET Endpoint /usuarios/${_id}
-    ${response}                GET On Session      serverest    /usuarios/${_id}
-    Log To Console                                 Response: ${response.content}
-    Set Global Variable        ${response}
-POST Endpoint /usuarios Administrador 
-    &{payload}                 Create Dictionary        nome=U23        email=u23@gmail.com        password=U22        administrador=true
-    ${response}                POST On Session          serverest       /usuarios        data=&{payload}
-    Set Global Variable        ${response}
+#********************PRODUTOS************************
+Cenario: GET Todos os Produtos 200
+    [Tags]    GETPROD
+    Criar Sessao
+    GET Endpoint /produtos
+    Validar Status Code "200"
+
+Cenario: POST Cadastrar Produto
+    [Tags]    POSTCREATPROD
+    Criar Sessao
+    Fazer Login e Armazenar Token
+    POST Endpoint /produtos
+    Validar Status Code "201"
+
+#Alterar os dados do produto no arquivo produto_ keywords
+Cenario: DELETE Excluir Produto 200
+    [Tags]    DELPROD
+    Criar Sessao
+    Criar Usuario Adm e Armazenar ID
+    Criar Produto e Armazenar ID
+    DELETE Endpoint /produtos
+    Validar Status Code "200"
+
+#******************CARRINHO**************************
+Cenario: GET Carrinhos 200
+    [Tags]    GETCAR
+    Criar Sessao
+    GET Endpoint /carrinhos
+    Validar Status Code "200"
+Cenario: POST Endpoint Carrinho 200
+    [Tags]    POSTCAR
+    Criar Sessao
+    Fazer Login e Armazenar Token
+    Criar Carrinho e Armazenar ID
+    DELETE Endpoint/carrinhos/concluir-compra
+
+Cenario: Cadastrar Carrinho 200
+    [Tags]    CARCREAT
+    Criar Sessao
+    Fazer Login e Armazenar Token
+    Criar Carrinho e Armazenar ID
     
-POST Endpoint /usuarios nao Administrador 
-    &{payload}                 Create Dictionary        nome=U25        email=u25@gmail.com        password=U22        administrador=false
-    ${response}                POST On Session          serverest       /usuarios        data=&{payload}
-    Set Global Variable        ${response}
-       
-PUT Endpoint /usuarios
-    &{payload}                 Create Dictionary        nome=U25        email=u30@gmail.com        password=U22        administrador=true
-    ${response}                PUT On Session           serverest       /usuarios/iNFbsUAXU3EFhsWc        data=&{payload}
-    Set Global Variable        ${response}
-DELETE Endpoint /usuarios
-    ${response}                DELETE On Session           serverest       /usuarios/iNFbsUAXU3EFhsWc        
-    Set Global Variable        ${response}    
+
+*** Keywords ***  
 Criar Sessao
     Create Session        serverest         http://localhost:3000    
 
@@ -120,7 +108,6 @@ Validar Status Code "${statuscode}"
 Validar o Usuario com ${_id}
     Should Be True  ID: ${response.json()["_id"]} == ${_id}    
 
-Printar Conteudo Response
-    Log To Console    Nome: ${response.content}
 
-     
+    
+
