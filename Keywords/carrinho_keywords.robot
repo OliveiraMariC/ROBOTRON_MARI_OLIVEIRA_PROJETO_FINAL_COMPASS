@@ -1,9 +1,8 @@
 # Sessão para configuração, documentação, imports de arquivos e libraries
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações do Endpoint Carrinho
-Library    RequestsLibrary
-#Sessão para setagem de variáveis para utilização
-*** Variables ***
+Resource        ../suports/base.robot    
+
 
 
 *** Keywords ***

@@ -1,16 +1,12 @@
 # Sessão para configuração, documentação, imports de arquivos e libraries
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações do Endpoint Usuários
-Library    RequestsLibrary
-Resource    ./common.robot
-#Sessão para setagem de variáveis para utilização
-*** Variables ***
-${id_usuario}
-#Sessão para Criação de Keywords Personalizadas
+Resource        ../suports/base.robot 
+
 *** Keywords ***
 GET Endpoint /usuarios 
     ${response}                 GET On Session      serverest    /usuarios
-    Log To Console                                  Response:${response}
+    Log To Console                                 Response:${response}
     Set Global Variable         ${response}
 POST Endpoint /usuarios 
    
@@ -64,10 +60,18 @@ Criar Usuario e Armazenar ID
     Log To Console                   ID Usuario: ${id_usuario}
     Set Global Variable                          ${id_usuario} 
 
-Criar Usuario Estatico Valido
+Cadastrar Usuario Estatico Valido
     ${json}        Importar JSON Estatico        json_usuarios_ex.json
     ${payload}        Set Variable        ${json["user_valido"]} 
     Set Global Variable    ${payload}
-    POST Endpoint /usuarios         
+    POST Endpoint /usuarios 
+    Log To Console    ${payload}
+Cadastrar Usuario Dinamico Valido
+    ${payload}         Criar Dados Dinamicos Usuario Valido
+    Set Global Variable         ${payload}
+    POST Endpoint /usuarios 
+
+        
 Validar Ter Criado Usuario 
     Should Be Equal                              ${response.json()["message"]}    Cadastro realizado com sucesso
+    

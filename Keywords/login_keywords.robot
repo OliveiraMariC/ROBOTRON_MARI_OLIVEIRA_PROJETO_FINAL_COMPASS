@@ -1,13 +1,7 @@
 # Sessão para configuração, documentação, imports de arquivos e libraries
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações do Endpoint Login
-Library    RequestsLibrary
-
-#Sessão para setagem de variáveis para utilização
-*** Variables ***
-${email_para_login}       user2a@gmail.com
-${password_para_login}    123
-
+Resource        ../suports/base.robot  
 
 *** Keywords ***
 POST Endpoint /login
