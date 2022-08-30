@@ -1,13 +1,13 @@
 {
     "user_valido": {
         "nome": "EU EXISTO",
-        "email": "jamesb@qa.com.br",
+        "email": "euexisto@qa.com.br",
         "password": "teste123",
         "administrador": "true"
     },
     "user_invalido": {
         "nome": "EU NÃO EXISTO",
-        "email": "fulano@qa.com",
+        "email": "eunaoexisto@qa.com",
         "password": "teste",
         "administrador": "true"
     },

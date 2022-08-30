@@ -6,7 +6,6 @@ Resource    ./usuarios_keywords.robot
 Resource    ./login_keywords.robot
 Resource    ./produtos_keywords.robot
 Resource    ./carrinho_keywords.robot
-
 #Sessão para setagem de variáveis para utilização
 *** Variables ***
 ${response}
@@ -39,6 +38,8 @@ Cenario: DELETE Excluir Usuario 200
     Criar Sessao
     DELETE Endpoint /usuarios
     Validar Status Code "200"
+    GET Endpoint /usuarios
+    Validar Status Code "200"
 
 #Encadeamentos
 Cenario POST Cadastrar Usuarios Não Administrador 201
@@ -56,6 +57,14 @@ Cenario POST Cadastrar Usuarios Administrador 201
     Validar Ter Criado Usuario
     DELETE Endpoint /usuarios
     Validar Status Code "200"
+
+#Usuários Massa Estática
+Cenario: POST Criar Usuario de Massa Estatica 201
+    [Tags]    POSTUSERME
+    Criar Sessao
+    Criar Usuario Estatico Valido
+    Validar Status Code "201"
+
 #********************LOGIN***************************
 Cenario: POST Realizar Login 200
     [Tags]        POSTLOGIN
@@ -98,12 +107,11 @@ Cenario Criar Carrinho 201
     Criar Sessao
     Fazer Login e Armazenar Token
 
+
 *** Keywords ***  
 Criar Sessao
     Create Session        serverest         http://localhost:3000    
 
-Validar Status Code "${statuscode}"
-    Should Be True    ${response.status_code} == ${statuscode}
 Validar o Usuario com ${_id}
     Should Be True  ID: ${response.json()["_id"]} == ${_id}    
 

@@ -7,7 +7,7 @@ Library    RequestsLibrary
 *** Variables ***
 ${email_para_login}       user2a@gmail.com
 ${password_para_login}    123
-${response}
+
 
 *** Keywords ***
 POST Endpoint /login

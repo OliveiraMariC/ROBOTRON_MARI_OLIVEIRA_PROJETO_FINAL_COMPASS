@@ -2,11 +2,9 @@
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações do Endpoint Usuários
 Library    RequestsLibrary
-
-
+Resource    ./common.robot
 #Sessão para setagem de variáveis para utilização
 *** Variables ***
-${response}
 ${id_usuario}
 #Sessão para Criação de Keywords Personalizadas
 *** Keywords ***
@@ -15,8 +13,8 @@ GET Endpoint /usuarios
     Log To Console                                  Response:${response}
     Set Global Variable         ${response}
 POST Endpoint /usuarios 
-    &{payload}                  Create Dictionary        nome=U44        email=u44@gmail.com        password=U44        administrador=true
-    ${response}                 POST On Session          serverest       /usuarios                          data=&{payload}
+   
+    ${response}                 POST On Session          serverest       /usuarios        json=&{payload}                          
     Log To Console    Response: ${response}    
     Set Global Variable         ${response}
 POST Endpoint /usuarios Administrador 
@@ -42,7 +40,7 @@ PUT Endpoint /usuarios
     Log To Console    Response: ${response}
     Set Global Variable         ${response}
 DELETE Endpoint /usuarios
-    ${response}                DELETE On Session           serverest       /usuarios/l5PjcHylqtF4JguG  
+    ${response}                DELETE On Session           serverest       /usuarios/rCRifRCL7y5vHCba
     Log To Console    Response:${response}      
     Set Global Variable        ${response}    
 
@@ -50,7 +48,7 @@ Criar Usuario Adm e Armazenar ID
     POST Endpoint /usuarios Administrador
     Validar Ter Criado Usuario
     ${id_usuario}            Set Variable        ${response.json()["_id"]} 
-    Log To Console                   ID Usuario: ${id_usuario}
+    Log To Console                   ID Usuario: ${id_usuario}    
     Set Global Variable                          ${id_usuario} 
 
 Criar Usuario Nao Adm e Armazenar ID
@@ -65,5 +63,11 @@ Criar Usuario e Armazenar ID
     ${id_usuario}            Set Variable        ${response.json()["_id"]} 
     Log To Console                   ID Usuario: ${id_usuario}
     Set Global Variable                          ${id_usuario} 
+
+Criar Usuario Estatico Valido
+    ${json}        Importar JSON Estatico        json_usuarios_ex.json
+    ${payload}        Set Variable        ${json["user_valido"]} 
+    Set Global Variable    ${payload}
+    POST Endpoint /usuarios         
 Validar Ter Criado Usuario 
     Should Be Equal                              ${response.json()["message"]}    Cadastro realizado com sucesso

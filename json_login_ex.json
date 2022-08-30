@@ -1,18 +1,18 @@
 {
     "user_valido": {
         "email":"eusouvalido@gmail.com",
-        "senha":"12345"
+        "senha":"EUSOUVALIDO"
     },
     "user_invalido": {
         "email":"eunaopasso@gmail.com",
-        "senha":"teste12345"
+        "senha":"EUNAOPASSO"
     },
     "user_sem_senha": {
-        "email":"nãovoupassrnunca@gmail.com",
+        "email":"eusouvalido@gmail.com",
         "senha":""
     },
     "user_sem_email": {
         "email":"",
-        "senha":"Naovoupassar"
+        "senha":"NAOTENHOEMAIL"
     }
 }

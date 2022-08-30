@@ -4,7 +4,7 @@ Documentation       Keywords e Variáveis para Ações do Endpoint Produtos
 Library    RequestsLibrary
 #Sessão para setagem de variáveis para utilização
 *** Variables ***
-${response}
+
 ${id_produto}
 ${token_auth} 
 *** Keywords ***

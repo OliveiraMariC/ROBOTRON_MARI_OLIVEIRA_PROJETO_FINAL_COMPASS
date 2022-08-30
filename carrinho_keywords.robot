@@ -5,9 +5,6 @@ Library    RequestsLibrary
 #Sessão para setagem de variáveis para utilização
 *** Variables ***
 
-${token_auth}
-${id_produto}
-${response}
 
 *** Keywords ***
 GET Endpoint /carrinhos 
