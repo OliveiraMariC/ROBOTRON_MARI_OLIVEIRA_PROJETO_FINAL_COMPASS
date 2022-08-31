@@ -1,238 +1,301 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20220830 12:57:06.573" rpa="false" schemaversion="3">
-<suite id="s1" name="Base" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\base.robot">
-<test id="s1-t1" name="Cenario: POST Cadastrar Produto de Massa Dinamica 201" line="108">
-<kw name="Criar Sessao">
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20220831 17:10:58.588" rpa="false" schemaversion="3">
+<suite id="s1" name="Usuarios Tests" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\tests\usuarios_tests.robot">
+<kw name="Criar Sessao" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>serverest</arg>
-<arg>http://localhost:3000</arg>
+<arg>${BASE_URI}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20220830 12:57:07.108" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20220830 12:57:07.108" endtime="20220830 12:57:07.108"/>
+<msg timestamp="20220831 17:10:59.022" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220831 17:10:59.022" endtime="20220831 17:10:59.022"/>
 </kw>
-<status status="PASS" starttime="20220830 12:57:07.107" endtime="20220830 12:57:07.108"/>
+<status status="PASS" starttime="20220831 17:10:59.021" endtime="20220831 17:10:59.023"/>
 </kw>
-<kw name="Fazer Login e Armazenar Token" library="login_keywords">
-<kw name="POST Endpoint /login" library="login_keywords">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{payload}</var>
-<arg>email=${email_para_login}</arg>
-<arg>password=${password_para_login}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220830 12:57:07.110" level="INFO">&amp;{payload} = { email=user2a@gmail.com | password=123 }</msg>
-<status status="PASS" starttime="20220830 12:57:07.109" endtime="20220830 12:57:07.110"/>
-</kw>
-<kw name="POST On Session" library="RequestsLibrary">
+<test id="s1-t1" name="Cenario: GET Todos os Usuarios 200" line="17">
+<kw name="GET Endpoint /usuarios" library="usuarios_keywords">
+<kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>serverest</arg>
-<arg>/login</arg>
-<arg>data=&amp;{payload}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220830 12:57:07.120" level="INFO">POST Request : url=http://localhost:3000/login 
- path_url=/login 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'} 
- body=email=user2a%40gmail.com&amp;password=123 
- </msg>
-<msg timestamp="20220830 12:57:07.121" level="INFO">POST Response : url=http://localhost:3000/login 
- status=200, reason=OK 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'a22c3c5f-461b-4157-9621-89068dd48477', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '267', 'Date': 'Tue, 30 Aug 2022 15:57:07 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
- body={
-    "message": "Login realizado com sucesso",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyYUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MTg3NTAyNywiZXhwIjoxNjYxODc1NjI3fQ.FXq_KRxbBybiD16Imxj1nA8NoVg389t_V_FLGGQIJF4"
-} 
- </msg>
-<msg timestamp="20220830 12:57:07.121" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220830 12:57:07.110" endtime="20220830 12:57:07.121"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response:${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220830 12:57:07.121" endtime="20220830 12:57:07.123"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220830 12:57:07.124" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20220830 12:57:07.123" endtime="20220830 12:57:07.124"/>
-</kw>
-<status status="PASS" starttime="20220830 12:57:07.109" endtime="20220830 12:57:07.124"/>
-</kw>
-<kw name="Validar Ter Logado" library="login_keywords">
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${response.json()["message"]}</arg>
-<arg>Login realizado com sucesso</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220830 12:57:07.124" endtime="20220830 12:57:07.125"/>
-</kw>
-<kw name="Should Not Be Empty" library="BuiltIn">
-<arg>${response.json()["authorization"]}</arg>
-<doc>Verifies that the given item is not empty.</doc>
-<msg timestamp="20220830 12:57:07.125" level="INFO">Length is 194</msg>
-<status status="PASS" starttime="20220830 12:57:07.125" endtime="20220830 12:57:07.125"/>
-</kw>
-<status status="PASS" starttime="20220830 12:57:07.124" endtime="20220830 12:57:07.125"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${token_auth}</var>
-<arg>${response.json()["authorization"]}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220830 12:57:07.126" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyYUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MTg3NTAyNywiZXhwIjoxNjYxODc1NjI3fQ.FXq_KRxbBybiD16Imxj1nA8NoVg389t_V_FLGGQIJF4</msg>
-<status status="PASS" starttime="20220830 12:57:07.126" endtime="20220830 12:57:07.126"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Token Salvo: ${token_auth}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220830 12:57:07.126" endtime="20220830 12:57:07.127"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${token_auth}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220830 12:57:07.127" level="INFO">${token_auth} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyYUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MTg3NTAyNywiZXhwIjoxNjYxODc1NjI3fQ.FXq_KRxbBybiD16Imxj1nA8NoVg389t_V_FLGGQIJF4</msg>
-<status status="PASS" starttime="20220830 12:57:07.127" endtime="20220830 12:57:07.127"/>
-</kw>
-<status status="PASS" starttime="20220830 12:57:07.109" endtime="20220830 12:57:07.127"/>
-</kw>
-<kw name="Cadastrar Produto Dinamico Valido" library="produtos_keywords">
-<kw name="Criar Dados Produto Valido" library="dynamics">
-<var>${payload}</var>
-<kw name="Word" library="FakerLibrary">
-<var>${random_produto}</var>
-<doc>Generate a word.</doc>
-<msg timestamp="20220830 12:57:07.128" level="INFO">${random_produto} = cum</msg>
-<status status="PASS" starttime="20220830 12:57:07.128" endtime="20220830 12:57:07.128"/>
-</kw>
-<kw name="Building Number" library="FakerLibrary">
-<var>${random_preco}</var>
-<doc>:example: '791'</doc>
-<msg timestamp="20220830 12:57:07.129" level="INFO">${random_preco} = 69</msg>
-<status status="PASS" starttime="20220830 12:57:07.129" endtime="20220830 12:57:07.129"/>
-</kw>
-<kw name="Building Number" library="FakerLibrary">
-<var>${random_qtd}</var>
-<doc>:example: '791'</doc>
-<msg timestamp="20220830 12:57:07.129" level="INFO">${random_qtd} = 99</msg>
-<status status="PASS" starttime="20220830 12:57:07.129" endtime="20220830 12:57:07.129"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${payload}</var>
-<arg>nome=${random_produto}</arg>
-<arg>preco=${random_preco}</arg>
-<arg>descricao=produto teste</arg>
-<arg>quantidade=${random_qtd}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220830 12:57:07.130" level="INFO">${payload} = {'nome': 'cum', 'preco': '69', 'descricao': 'produto teste', 'quantidade': '99'}</msg>
-<status status="PASS" starttime="20220830 12:57:07.129" endtime="20220830 12:57:07.130"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220830 12:57:07.130" endtime="20220830 12:57:07.131"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220830 12:57:07.131" level="INFO">${payload} = {'nome': 'cum', 'preco': '69', 'descricao': 'produto teste', 'quantidade': '99'}</msg>
-<status status="PASS" starttime="20220830 12:57:07.131" endtime="20220830 12:57:07.131"/>
-</kw>
-<msg timestamp="20220830 12:57:07.131" level="INFO">${payload} = None</msg>
-<status status="PASS" starttime="20220830 12:57:07.128" endtime="20220830 12:57:07.131"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${payload}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220830 12:57:07.132" level="INFO">${payload} = None</msg>
-<status status="PASS" starttime="20220830 12:57:07.131" endtime="20220830 12:57:07.132"/>
-</kw>
-<kw name="POST Endpoint /produtos" library="produtos_keywords">
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{header}</var>
-<arg>Authorization=${token_auth}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220830 12:57:07.132" level="INFO">&amp;{header} = { Authorization=Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyYUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MTg3NTAyNywiZXhwIjoxNjYxODc1NjI3fQ.FXq_KRxbBybiD16Imxj1nA8NoVg389t_V...</msg>
-<status status="PASS" starttime="20220830 12:57:07.132" endtime="20220830 12:57:07.132"/>
-</kw>
-<kw name="POST On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>serverest</arg>
-<arg>/produtos</arg>
-<arg>headers=&amp;{header}</arg>
-<arg>expected_status=any</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20220830 12:57:07.137" level="INFO">POST Request : url=http://localhost:3000/produtos 
- path_url=/produtos 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyYUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMyIsImlhdCI6MTY2MTg3NTAyNywiZXhwIjoxNjYxODc1NjI3fQ.FXq_KRxbBybiD16Imxj1nA8NoVg389t_V_FLGGQIJF4', 'Content-Length': '0'} 
+<arg>/usuarios</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220831 17:10:59.035" level="INFO">GET Request : url=http://localhost:3000/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20220830 12:57:07.137" level="INFO">POST Response : url=http://localhost:3000/produtos 
- status=400, reason=Bad Request 
- headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'b233a0da-94f1-48fe-b192-5e8e07fc94f1', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '170', 'Date': 'Tue, 30 Aug 2022 15:57:07 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+<msg timestamp="20220831 17:10:59.036" level="INFO">GET Response : url=http://localhost:3000/usuarios 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'ceb37f2c-ef87-4136-8cac-2afc30375534', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '5519', 'Date': 'Wed, 31 Aug 2022 20:10:59 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
  body={
-    "nome": "nome é obrigatório",
-    "preco": "preco é obrigatório",
-    "descricao": "descricao é obrigatório",
-    "quantidade": "quantidade é obrigatório"
+    "quantidade": 27,
+    "usuarios": [
+        {
+            "nome": "Christopher Patel MD",
+            "email": "ztaylor@example.com",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "1S84uZskYBhliKbt"
+        },
+        {
+            "nome": "U40",
+            "email": "u40@gmail.com",
+            "password": "U22",
+            "administrador": "false",
+            "_id": "5lITqHH9cBEdNwDd"
+        },
+        {
+            "nome": "Maria Julia Almeida",
+            "email": "juan38@example.org",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "6ljG6v83fcmph2C6"
+        },
+        {
+            "nome": "Stephany Cunha",
+            "email": "sophiasilva@example.net",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "7IORjCunNzfGmbmM"
+        },
+        {
+            "nome": "William Holt",
+            "email": "carrilloaaron@example.org",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "7YeWQh7ftDLRFCZh"
+        },
+        {
+            "nome": "U23",
+            "email": "u23@gmail.com",
+            "password": "U22",
+            "administrador": "true",
+            "_id": "7mjtxen4auyF6RQb"
+        },
+        {
+            "nome": "User15",
+            "email": "user15@gmail.com",
+            "password": "user3",
+            "administrador": "true",
+            "_id": "9EtRU1rVIwUuP2Sz"
+        },
+        {
+            "nome": "user2",
+            "email": "user2a@gmail.com",
+            "password": "123",
+            "administrador": "true",
+            "_id": "DSJJAjO7zWZbNnBl"
+        },
+        {
+            "nome": "U34",
+            "email": "u34@gmail.com",
+            "password": "U22",
+            "administrador": "false",
+            "_id": "P0nWtLiVdlaEodpj"
+        },
+        {
+            "nome": "User5",
+            "email": "user5@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "PWtNVH72Hsq6WL0N"
+        },
+        {
+            "nome": "User4",
+            "email": "user4@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "PdbjRkAQVQF6Dszz"
+        },
+        {
+            "nome": "U22",
+            "email": "u22@gmail.com",
+            "password": "U22",
+            "administrador": "true",
+            "_id": "QNd8fPnLa1VVhkOW"
+        },
+        {
+            "nome": "User19",
+            "email": "user19@gmail.com",
+            "password": "user19",
+            "administrador": "true",
+            "_id": "RvRKWKGSjyIgAnZ0"
+        },
+        {
+            "nome": "Stephen Jackson",
+            "email": "clynch@example.com",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "VsGqmj6tdqtQJ0MX"
+        },
+        {
+            "nome": "User8",
+            "email": "user9@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "X0oCrGAA6KvgCsPG"
+        },
+        {
+            "nome": "U2",
+            "email": "u30@gmail.com",
+            "password": "U22",
+            "administrador": "true",
+            "_id": "YUGR87fWS6eacXhG"
+        },
+        {
+            "nome": "U25",
+            "email": "u25@gmail.com",
+            "password": "U22",
+            "administrador": "false",
+            "_id": "d5mB0zgGBdXyW8Xn"
+        },
+        {
+            "nome": "Sarah Haynes",
+            "email": "gabrielnguyen@example.com",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "hfXqE1U1siHYV92u"
+        },
+        {
+            "nome": "EU EXISTO",
+            "email": "jamesb@qa.com.br",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "iTa32T9XHJsFbGuS"
+        },
+        {
+            "nome": "User22",
+            "email": "user22@gmail.com",
+            "password": "user22",
+            "administrador": "true",
+            "_id": "kj0ZPHuHk61moXSJ"
+        },
+        {
+            "nome": "User3",
+            "email": "user3@gmail.com",
+            "password": "user3",
+            "administrador": "false",
+            "_id": "lMxWoBpIL5s8F2Mx"
+        },
+        {
+            "nome": "mari",
+            "email": "mari@gmail.com",
+            "password": "123",
+            "administrador": "true",
+            "_id": "m6Qq23vkDqU3mISX"
+        },
+        {
+            "nome": "U24",
+            "email": "u24@gmail.com",
+            "password": "U22",
+            "administrador": "false",
+            "_id": "mQALrlOh7J3uupFz"
+        },
+        {
+            "nome": "User21",
+            "email": "user21@gmail.com",
+            "password": "user20",
+            "administrador": "true",
+            "_id": "njNlATN3XSltWyUb"
+        },
+        {
+            "nome": "U41",
+            "email": "u41@gmail.com",
+            "password": "U33",
+            "administrador": "true",
+            "_id": "pSLqtHmun9aVzbz8"
+        },
+        {
+            "nome": "EU EXISTO",
+            "email": "euexisto@qa.com.br",
+            "password": "teste123",
+            "administrador": "true",
+            "_id": "svucWaUnUrUt8THs"
+        },
+        {
+            "nome": "Luiz Otávio da Mata",
+            "email": "leticia06@example.org",
+            "password": "senha123",
+            "administrador": "true",
+            "_id": "zVid1IrhUZy1SSMu"
+        }
+    ]
 } 
  </msg>
-<msg timestamp="20220830 12:57:07.138" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220830 12:57:07.133" endtime="20220830 12:57:07.138"/>
+<msg timestamp="20220831 17:10:59.036" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220831 17:10:59.024" endtime="20220831 17:10:59.036"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${payload}</arg>
+<arg>Response:${response}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220830 12:57:07.138" endtime="20220830 12:57:07.138"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Response: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220830 12:57:07.139" endtime="20220830 12:57:07.140"/>
+<status status="PASS" starttime="20220831 17:10:59.037" endtime="20220831 17:10:59.038"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20220830 12:57:07.141" level="INFO">${response} = &lt;Response [400]&gt;</msg>
-<status status="PASS" starttime="20220830 12:57:07.140" endtime="20220830 12:57:07.141"/>
+<msg timestamp="20220831 17:10:59.039" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220831 17:10:59.038" endtime="20220831 17:10:59.039"/>
 </kw>
-<status status="PASS" starttime="20220830 12:57:07.132" endtime="20220830 12:57:07.141"/>
+<status status="PASS" starttime="20220831 17:10:59.024" endtime="20220831 17:10:59.039"/>
 </kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${id_produto}</var>
-<arg>${response.json()["_id"]}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220830 12:57:07.143" level="FAIL">Resolving variable '${response.json()["_id"]}' failed: KeyError: '_id'</msg>
-<status status="FAIL" starttime="20220830 12:57:07.142" endtime="20220830 12:57:07.143"/>
+<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${statuscode}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220831 17:10:59.040" endtime="20220831 17:10:59.042"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>ID Produto: ${id_produto}</arg>
+<arg>Status Code Retornado: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20220830 12:57:07.143" endtime="20220830 12:57:07.143"/>
+<status status="PASS" starttime="20220831 17:10:59.042" endtime="20220831 17:10:59.043"/>
 </kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${id_produto}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20220830 12:57:07.143" endtime="20220830 12:57:07.143"/>
+<status status="PASS" starttime="20220831 17:10:59.040" endtime="20220831 17:10:59.043"/>
 </kw>
-<status status="FAIL" starttime="20220830 12:57:07.128" endtime="20220830 12:57:07.144"/>
-</kw>
-<kw name="Validar Status Code &quot;201&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
-<status status="NOT RUN" starttime="20220830 12:57:07.144" endtime="20220830 12:57:07.144"/>
-</kw>
-<tag>POSTPRODMD</tag>
-<status status="FAIL" starttime="20220830 12:57:07.107" endtime="20220830 12:57:07.145">Resolving variable '${response.json()["_id"]}' failed: KeyError: '_id'</status>
+<tag>GETUSER</tag>
+<status status="PASS" starttime="20220831 17:10:59.023" endtime="20220831 17:10:59.043"/>
 </test>
-<doc>Arquivo simples para requisições HTTP em APIs REST</doc>
-<status status="FAIL" starttime="20220830 12:57:06.575" endtime="20220830 12:57:07.147"/>
+<test id="s1-t2" name="Cenario 10: GET Buscar Usuario 200" line="130">
+<kw name="Criar Um Usuario e Armazenar ID">
+<msg timestamp="20220831 17:10:59.052" level="FAIL">No keyword with name 'Criar Um Usuario e Armazenar ID' found. Did you mean:
+    usuarios_keywords.Criar Usuario E Armazenar ID
+    usuarios_keywords.Criar Usuario Adm E Armazenar ID
+    carrinho_keywords.Criar Um Carrinho E Armazenar ID
+    usuarios_keywords.Criar Usuario Nao Adm E Armazenar ID</msg>
+<status status="FAIL" starttime="20220831 17:10:59.051" endtime="20220831 17:10:59.052"/>
+</kw>
+<kw name="GET Endpoint /usuarios/id">
+<status status="NOT RUN" starttime="20220831 17:10:59.057" endtime="20220831 17:10:59.057"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="Validar Status Code &quot;${statuscode}&quot;">
+<status status="NOT RUN" starttime="20220831 17:10:59.058" endtime="20220831 17:10:59.058"/>
+</kw>
+<kw name="DELETE Endpoint /usuarios/id">
+<status status="NOT RUN" starttime="20220831 17:10:59.063" endtime="20220831 17:10:59.063"/>
+</kw>
+<kw name="Validar Se Dado Cadastro Existe &quot;${id_user}&quot;">
+<status status="NOT RUN" starttime="20220831 17:10:59.069" endtime="20220831 17:10:59.069"/>
+</kw>
+<tag>GETUSER</tag>
+<status status="FAIL" starttime="20220831 17:10:59.046" endtime="20220831 17:10:59.070">No keyword with name 'Criar Um Usuario e Armazenar ID' found. Did you mean:
+    usuarios_keywords.Criar Usuario E Armazenar ID
+    usuarios_keywords.Criar Usuario Adm E Armazenar ID
+    carrinho_keywords.Criar Um Carrinho E Armazenar ID
+    usuarios_keywords.Criar Usuario Nao Adm E Armazenar ID</status>
+</test>
+<doc>Arquivo de testes para endpoint /usuarios</doc>
+<status status="FAIL" starttime="20220831 17:10:58.589" endtime="20220831 17:10:59.072"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">POSTPRODMD</stat>
+<stat pass="1" fail="1" skip="0">GETUSER</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Base">Base</stat>
+<stat pass="1" fail="1" skip="0" id="s1" name="Usuarios Tests">Usuarios Tests</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220831 17:10:59.016" level="ERROR">Error in file 'C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\tests\usuarios_tests.robot' on line 8: Error in file 'C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\consumir_library_python.robot' on line 5: Resource file with 'Test Cases' section is invalid.</msg>
 </errors>
 </robot>
