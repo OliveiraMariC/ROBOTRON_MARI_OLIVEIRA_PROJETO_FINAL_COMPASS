@@ -1,12 +1,12 @@
 # Sessão para configuração, documentação, imports de arquivos e libraries
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações do Endpoint Usuários
-Resource        ../suports/base.robot 
+Resource            ../suports/base.robot 
 
 *** Keywords ***
 GET Endpoint /usuarios 
     ${response}                 GET On Session      serverest    /usuarios
-    Log To Console                                 Response:${response}
+    Log To Console                                  Response:${response}
     Set Global Variable         ${response}
 POST Endpoint /usuarios 
    
