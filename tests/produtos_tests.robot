@@ -2,8 +2,10 @@
 *** Settings ***
 
 Documentation      Arquivo de Testes Endpoint /produtos
-Resource    ../Keywords/produtos_keywords.robot
-Suite Setup    Criar Sessao
+Resource    ../supports/base.robot
+
+Suite Setup    Criar Sessao    
+
 #Sessão para a criação dos cenários
 *** Test Cases ***
 Selecionar Produto Estatico "${produto}"

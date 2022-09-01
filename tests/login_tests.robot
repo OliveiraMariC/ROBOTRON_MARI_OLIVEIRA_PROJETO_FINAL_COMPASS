@@ -2,8 +2,9 @@
 *** Settings ***
 
 Documentation        Arquivo de Testes Endpoint /login
-Resource    ../Keywords/login_keywords.robot
-Suite Setup    Criar Sessao
+Resource    ../supports/base.robot
+Suite Setup    Criar Sessao    
+
 #Sessão para a criação dos cenários
 *** Test Cases ***
 Cenario: POST Realizar Login 200

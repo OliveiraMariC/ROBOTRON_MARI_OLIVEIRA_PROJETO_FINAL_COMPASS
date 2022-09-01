@@ -2,9 +2,9 @@
 *** Settings ***
 
 Documentation       Arquivo de Testes Endpoint /carrinho
-Resource    ../Keywords/carrinho_keywords.robot
-Resource    ../Keywords/login_keywords.robot
-Suite Setup    Criar Sessao
+Resource    ../supports/base.robot
+Suite Setup    Criar Sessao    
+
 #Sessão para a criação dos cenários
 *** Test Cases ***
 Cenario: GET Listar Todos os Carrinhos 200
