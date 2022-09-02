@@ -4,11 +4,11 @@
         "senha":"EUSOUVALIDO"
     },
     "user_invalido": {
-        "email":"eunaopasso@gmail.com",
+        "email":"eusouvalido@gmail.com",
         "senha":"EUNAOPASSO"
     },
     "user_sem_senha": {
-        "email":"eusouvalido@gmail.com",
+        "email":"euqueropassar@gmail.com",
         "senha":""
     },
     "user_sem_email": {

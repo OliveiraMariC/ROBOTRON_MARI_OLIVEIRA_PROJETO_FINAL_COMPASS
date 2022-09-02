@@ -2,7 +2,7 @@
 *** Settings ***
   
 Documentation        Arquivo de testes para endpoint /usuarios
-Resource    ../supports/base.robot
+Resource    ../suporte/base.robot
 
 Suite Setup    Criar Sessao    
 
@@ -12,47 +12,34 @@ Suite Setup    Criar Sessao
 
 #Requisições Simples
 Cenario: GET Todos os Usuarios 200
-    [Tags]    GETUSER
+    [Tags]    GETALL
     GET Endpoint /usuarios
+    Trazer Quantidade Usuarios
     Validar Status Code "200"
-    Quantidade Usuarios Cadastrados
-Cenario: POST Endpoint /usuarios sem Email
-    [Tags]    POSTUSERSE
-    POST Endpoint /usuarios sem Email
-    Validar Status Code "400"
-Cenario: PUT Editar Usuario 200 
-    [Tags]        PUTUSER   
+    Validar Razao "OK"
+
+Cenario: POST Cadastrar Usuarios 201
+    [Tags]    POST1
+    Trazer Quantidade Usuarios
+    Post Endpoint /usuarios
+    Validar Ter Criado o Usuario
+    Validar Status Code "201"
+    Validar Razao "Created"
+    Trazer Quantidade Usuarios
+
+Cenario: PUT Editar Usuario 200
+    [Tags]    PUT1
     PUT Endpoint /usuarios
     Validar Status Code "200"
-
-Cenario: DELETE Excluir Usuario 200
-    [Tags]    DELUSER
+    Trazer Quantidade Usuarios
+Cenario: DELETE Excluir Usuario
+    [Tags]    DELETE1
     DELETE Endpoint /usuarios
     Validar Status Code "200"
+    Trazer Quantidade Usuarios
     GET Endpoint /usuarios
-    Validar Status Code "200"
-
-#Encadeamentos
-Cenario POST Cadastrar Usuarios Não Administrador 201
-    [Tags]        POSTUSER_NAD
-    Criar Usuario Nao Adm e Armazenar ID
-    Validar Ter Criado Usuario
-    DELETE Endpoint /usuarios
-    Validar Status Code "200"
-
-Cenario POST Cadastrar Usuarios Administrador 201
-    [Tags]        POSTUSER_AD
-    Criar Usuario Adm e Armazenar ID
-    Validar Ter Criado Usuario
-    Quantidade Usuarios Cadastrados
-    DELETE Endpoint /usuarios
-    Validar Status Code "200"
-    Quantidade Usuarios Cadastrados
-#Usuários Massa Estática
-Cenario: POST Cadastrar Usuario de Massa Estatica 201
-    [Tags]    POSTUSERME
-    Cadastrar Usuario Estatico Valido
+    Trazer Quantidade Usuarios
+Cenario: POST Criar Usuario de Massa Estatica 201
+    [Tags]    POSTUSER_ESTATIC
+    Criar Dados Usuario Valido
     Validar Status Code "201"
-
-#Usuário Massa Dinâmica
-

@@ -25,3 +25,6 @@ def Buscar_Quantidade_Produtos_Cadastrados():
     r = req.get("http://localhost:3000/produtos/")
     response_js = r.json()  
     return response_js["quantidade"]
+
+
+

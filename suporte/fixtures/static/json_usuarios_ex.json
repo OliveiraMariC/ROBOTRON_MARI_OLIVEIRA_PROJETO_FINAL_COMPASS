@@ -1,26 +1,32 @@
 {
     "user_valido": {
         "nome": "EU EXISTO",
-        "email": "euexisto@qa.com.br",
-        "password": "teste123",
+        "email": "eusouvalido@qa.com.br",
+        "password": "eupassei",
         "administrador": "true"
     },
     "user_invalido": {
         "nome": "EU NÃO EXISTO",
-        "email": "eunaoexisto@qa.com",
-        "password": "teste",
+        "email": "eunaosouvalido@qa.com",
+        "password": "EUQUEROPASSAR",
         "administrador": "true"
     },
     "user_sem_senha": {
         "nome": "EU NÃO TENHO SENHA",
-        "email": "lilgab@qa.com.br",
+        "email": "achoquenaovaipassar@qa.com.br",
         "password": "",
         "administrador": "true"
     },
     "user_sem_email": {
         "nome": "EU NÃO TENHO EMAIL",
         "email": "",
-        "password": "teste123",
+        "password": "NAOVOUPASSAR",
         "administrador": "true"
+    },
+    "user_sem_admin":{
+        "nome": "EU NÃO ADMINISTRO NADA",
+        "email": "",
+        "password": "NAOVOUPASSAR",
+        "administrador": "" 
     }
 }
