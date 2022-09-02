@@ -30,16 +30,14 @@ Cenario: POST Cadastrar Usuarios 201
 Cenario: PUT Editar Usuario 200
     [Tags]    PUT1
     PUT Endpoint /usuarios
+    Validar Ter Alterado Usuario
     Validar Status Code "200"
     Trazer Quantidade Usuarios
-Cenario: DELETE Excluir Usuario
-    [Tags]    DELETE1
+
+Cenario: DELETE Excluir Usuario 200
+    [Tags]    DELUSER
+    Cadastrar Usuario e Aramazenar ID
     DELETE Endpoint /usuarios
     Validar Status Code "200"
-    Trazer Quantidade Usuarios
-    GET Endpoint /usuarios
-    Trazer Quantidade Usuarios
-Cenario: POST Criar Usuario de Massa Estatica 201
-    [Tags]    POSTUSER_ESTATIC
-    Criar Dados Usuario Valido
-    Validar Status Code "201"
+    
+    

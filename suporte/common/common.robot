@@ -2,6 +2,7 @@
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações Gerais
 
+
 *** Keywords ***
 Validar Status Code "${statuscode}"
     Should Be Equal As Integers     ${response.status_code}    ${statuscode} 
