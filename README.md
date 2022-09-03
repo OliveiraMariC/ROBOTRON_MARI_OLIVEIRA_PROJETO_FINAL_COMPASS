@@ -1,5 +1,6 @@
 ![WhatsApp Image 2022-08-18 at 07 45 24](https://user-images.githubusercontent.com/109982238/185379325-04fa7f29-f0ea-4146-a565-a7edf5680267.jpeg)
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge) 
+***
+![Python](https://img.shields.io/pypi/pyversions/p) ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=development&color=GREEN&style=for-the-badge)
                
           
 ***
@@ -34,7 +35,7 @@
 
 
 ### Etapa 1: 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" /> [Python]( https://www.python.org/downloads/)
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" /> [Link dowload Python]( https://www.python.org/downloads/)
                                                                                                    
 
 ````sh
