@@ -12,7 +12,7 @@ def Buscar_Quantidade_Usuarios_Cadastrado():
     r = req.get("http://localhost:3000/usuarios/")
     response_js = r.json()  
     return response_js["quantidade"]
-
+ 
 def Cadastrar_Usuario_Dinamicos_Admin(admin):
     fake = Faker()
     nome = fake.name()

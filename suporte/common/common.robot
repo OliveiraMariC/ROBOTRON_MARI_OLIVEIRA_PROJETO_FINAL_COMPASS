@@ -2,7 +2,8 @@
 *** Settings ***
 Documentation       Keywords e Variáveis para Ações Gerais
 
-
+Library    OperatingSystem
+Resource    ../base.robot
 *** Keywords ***
 Validar Status Code "${statuscode}"
     Should Be Equal As Integers     ${response.status_code}    ${statuscode} 
