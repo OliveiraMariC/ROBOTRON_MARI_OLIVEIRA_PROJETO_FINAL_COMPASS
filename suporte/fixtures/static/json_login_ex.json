@@ -1,7 +1,7 @@
 {
     "user_valido": {
-        "email":"eusouvalido@gmail.com",
-        "senha":"EUSOUVALIDO"
+        "email":"eusouvalido@qa.com.br",
+        "password":"eupassei"
     },
     "user_invalido": {
         "email":"eusouvalido@gmail.com",

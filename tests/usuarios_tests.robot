@@ -12,40 +12,59 @@ Suite Setup    Criar Sessao
 
 #Requisições Simples
 Cenario 01: GET Todos os Usuarios 200
-    [Tags]    GETALL
+    [Tags]    GET_ALL
     GET Endpoint /usuarios
     Trazer Quantidade Usuarios
     Validar Status Code "200"
     Validar Razao "OK"
+Cenário 02: GET Buscar Usuario por ID 400
+    [Tags]    GET_USER_SEM_ID
+    GET Endpoint /usuarios ID
+    Validar Status Code "400"
+Cenário 03: POST Cadastrar Usuario Massa Estatica 201
+    [Tags]    POST_USER_201
+    Dados Usuario Estatico Valido
+    POST Endpoint /usuarios 
+    Validar Status Code "201"
 
-Cenario 02: POST Cadastrar Usuarios 201
-    [Tags]    POST1        
-    Trazer Quantidade Usuarios
+Cenário 04: POST Cadastrar Usuario Massa Estatica 400
+    [Tags]    POST_USER_400
+    Dados Usuario Estatico Email Cadastrado
+    POST Endpoint /usuarios 
+    Validar Status Code "400"
+
+Cenário 05: POST Cadastrar Usuario Massa Estatica Inexistente
+    [Tags]    POST_USER_INEXISTENTE
+    Dados Usuario Estatico Inexistente
+    POST Endpoint /usuarios
+    Validar Status Code "400"
+
+Cenário 06: POST Cadastrar Usuario Massa Estatica Sem Senha
+    [Tags]    POST_USER_SEM_SENHA
+    Dados Usuario Estatico Sem Senha
+    POST Endpoint /usuarios
+    Validar Status Code "400"
+Cenário 07: POST Cadastrar Usuario Massa Estatica Sem Admin
+    [Tags]    POST_USER__SEM_ADMIN
+    Dados Usuario Estatico Sem Admin
+    POST Endpoint /usuarios
+    Validar Status Code "400"
+Cenário 08: Ciar Usuario Dinamico 201
+    [Tags]    deluser
+    Criar Usuario Dinamico Admin
+    POST Endpoint /usuarios
     Validar Ter Criado o Usuario
     Validar Status Code "201"
-    Validar Razao "Created"
-    Trazer Quantidade Usuarios
-
-Cenario 03: PUT Editar Usuario 200
-    [Tags]    PUT1
-    PUT Endpoint /usuarios
-    Validar Status Code "200"
-    Trazer Quantidade Usuarios
-
-Cenario 04: DELETE Excluir Usuario 200
-    [Tags]    DELUSER
-    Cadastrar Usuario e Aramazenar ID
     DELETE Endpoint /usuarios
-    Validar Status Code "200"
-Cenario 05: POST Usuario Estatico 201
-    [Tags]    POSTUSER_STATIC 
-    Cadastrar Static Usuario Valido e Aramazenar ID
-    Validar Ter Criado o Usuario   
+Cenario 03:Criar Usuario Dinamico 201
+    [Tags]    POSTUSERDINAMICO
+    Criar Usuario Dinamico Admin 
+    POST Endpoint /usuarios
     Validar Status Code "201"
-Cenario 06: POST Usuario Estatico 400
-    [Tags]    POSTUSER_STATIC 
-    Cadastrar Static Usuario Valido e Aramazenar ID
-    Validar Status Code "400"
-Apagar: DELETE Endpoint /usuarios para apagar  
-    [Tags]    APAGAR
-    Apagar Usuario
+    Validar Ter Criado o Usuario
+    DELETE Endpoint /usuarios   
+
+
+
+apagar: delete endipoint usuarios
+    delete endpoint usuarios

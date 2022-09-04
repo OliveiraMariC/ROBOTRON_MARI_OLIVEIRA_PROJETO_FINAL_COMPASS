@@ -6,7 +6,7 @@ Library    OperatingSystem
 Resource    ../base.robot
 *** Keywords ***
 Validar Status Code "${statuscode}"
-    Should Be Equal As Integers     ${response.status_code}    ${statuscode} 
+    Should Be Equal As Integers     ${response.status_code}    ${statuscode}
     Log To Console        Status Code Retornado: ${response.status_code}
 Validar Razao "${razao}"
     Should Be Equal As Strings   ${response.reason}        ${razao} 
@@ -26,7 +26,9 @@ Validar Quantidade Total "${quantidade}"
 Selecionar Token Invalido
     ${token_auth}             Set Variable        12563737   
     Set Global Variable       ${token_auth}
-
+Validar Ter Alterado o Usuario    
+    Should Be Equal        ${response.json()["message"]}        Cadastro realizado com sucesso
+    Should Not Be Empty        ${response.json()["_id"]}
 Validar Erro "${nome_erro}"   
     IF         "${nome_erro}" == "nome" or "${nome_erro}" == "password" or "${nome_erro}" == "descricao"    
         Should Be Equal                    ${response.json()["${nome_erro}"]}    ${nome_erro} não pode ficar em branco 

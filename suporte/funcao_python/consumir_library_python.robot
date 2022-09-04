@@ -7,3 +7,4 @@ Library    library_tests.py
 Validar Quantidade Usuarios
     ${quantidade}    Buscar Quantidade Usuarios Cadastrado 
     Log To Console        ${quantidade}  
+

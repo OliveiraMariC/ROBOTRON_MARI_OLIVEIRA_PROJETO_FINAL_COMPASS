@@ -7,8 +7,8 @@ Suite Setup    Criar Sessao
 
 #Sessão para a criação dos cenários
 *** Test Cases ***
-Cenario: POST Realizar Login 200
+Cenario 01: POST Realizar Login 200
    [Tags]        POSTLOGIN1
-   POST Endpoint /login
+   POST Endpoint /login static
    Validar Status Code "200"
 

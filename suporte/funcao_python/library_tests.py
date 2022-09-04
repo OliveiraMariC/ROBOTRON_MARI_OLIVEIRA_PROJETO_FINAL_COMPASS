@@ -13,12 +13,13 @@ def Buscar_Quantidade_Usuarios_Cadastrado():
     response_js = r.json()  
     return response_js["quantidade"]
  
-def Cadastrar_Usuario_Dinamicos_Admin(admin):
-    fake = Faker()
-    nome = fake.name()
-    email = fake.email()
+def Cadastrar_Usuario_Dinamicos():
+    fake = Faker
+    nome = fake.name
+    email = fake.email
     senha = "senha123"
-    payload = {"nome": nome, "email": email, "password": senha, "administrador":admin}
+    admin = "true"
+    payload = {"nome": nome, "email": email, "password": senha, "administrador": admin}
     return payload
 
 def Buscar_Quantidade_Produtos_Cadastrados():

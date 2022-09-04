@@ -1,10 +1,18 @@
 {
     "user_valido": {
         "nome": "EU SOU VALIDO",
-        "email": "eusouvalido@qa.com.br",
+        "email": "eusouvalido@gmail.com.br",
         "password": "eupassei",
         "administrador": "true"
     },
+    "user_email_cadastrado": {
+    
+        "nome": "User110",
+        "email": "user110@gmail.com",
+        "password": "user103",
+        "administrador": "true"  
+    },
+    
     "user_invalido": {
         "nome": "EU NÃO EXISTO",
         "email": "eunaosouvalido",

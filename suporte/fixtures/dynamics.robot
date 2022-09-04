@@ -13,6 +13,18 @@ Criar Dados Produto Valido
     Log To Console              ${payload}
     Set Global Variable         ${payload} 
 
+Criar Usuario Dinamico Admin
+    ${nome_usuario}            FakerLibrary.Name
+    ${email_usuario}           FakerLibrary.Email
+    ${password_usuario}        FakerLibrary.Password
+    ${payload}    Create Dictionary    nome=${nome_usuario}    email=${email_usuario}    password=${password_usuario}    administrador="true"
     
+              
       
-    
+ Criar Usuario Dinamico Nao Admin
+    ${nome_usuario}            FakerLibrary.Name
+    ${email_usuario}           FakerLibrary.Email
+    ${password_usuario}        FakerLibrary.Password
+    ${payload}    Create Dictionary    nome=${nome_usuario}    email=${email_usuario}    password=${password_usuario}    administrador="false"
+
+                 

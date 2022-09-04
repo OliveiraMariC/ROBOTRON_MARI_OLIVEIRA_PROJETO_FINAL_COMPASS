@@ -4,16 +4,18 @@ Documentation       Keywords e Variáveis para Ações do Endpoint Login
 Resource        ../suporte/base.robot  
 
 *** Keywords ***
-POST Endpoint /login
-    &{payload}        Create Dictionary              email=${email_para_login}        password=${password_para_login}
-    ${response}    POST On Session    serverest       /login        data=&{payload}
+POST Endpoint /login static
+    ${json}    Importar JSON Estatico    json_login_ex.json 
+    ${payload}    Set Variable    ${json["user_valido"]}
+    Set Global Variable    ${payload}
+    ${response}    POST On Session    serverest       /login        json=&{payload}
     Log To Console        Response:${response.content}   
     Set Global Variable    ${response}
 Validar Ter Logado
     Should Be Equal        ${response.json()["message"]}        Login realizado com sucesso
     Should Not Be Empty        ${response.json()["authorization"]}        
 Fazer Login e armazenar Token
-    POST Endpoint /login
+    POST Endpoint /login static
     Validar Ter Logado
     ${token_auth}        Set Variable        ${response.json()["authorization"]} 
     Log To Console        Token Salvo:${token_auth}

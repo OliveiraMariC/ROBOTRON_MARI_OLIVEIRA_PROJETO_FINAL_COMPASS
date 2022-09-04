@@ -8,7 +8,7 @@ Resource            ../suporte/base.robot
 *** Keywords ***
 Criar Carrinho Estatico Valido
     ${json}                    Importar JSON Estatico        json_carrinho_ex.json  
-    ${payload}                 Set Variable                  ${json["carrinho_sem_qtd"]} 
+    ${payload}                 Set Variable                  ${json} 
     Set Global Variable        ${payload} 
     Log To Console             Response: ${payload}
     POST Endpoint /carrinhos
@@ -27,6 +27,7 @@ GET Endpoint /carrinhos
     Log To Console            Response: ${response.content}
 
 GET Endpoint /carrinhos/id
+    
     ${response}               GET On Session        serverest        /carrinhos/${id_carrinho}    expected_status=any
     Set Global Variable       ${response}
     Log To Console            Response: ${response.content}
