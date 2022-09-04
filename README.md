@@ -16,6 +16,10 @@
 <br>
 
 ![](https://i.imgur.com/waxVImv.png)
+## Descrição do projeto 
+
+<p align="justify">
+ Projeto de automação de API com ROBOTFRAMEWORK oferecido pela empresa COMPASS.UOL e tem como finalidade trazer a evolução de cada um dos envolvidos ao longo da trilha.
 ***
 <h3 align="center">Especificações Tecnicas sobre o projeto:</h3>
 
