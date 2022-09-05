@@ -17,4 +17,4 @@ Resource             ../keywords/produtos_keywords.robot
 
 *** Keywords ***
 Criar Sessao
-    Create Session    serverest   ${BASE_URI}
+    Create Session    serverest   ${BASE_URI}      

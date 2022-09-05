@@ -8,22 +8,23 @@ Suite Setup    Criar Sessao
 #Sessão para a criação dos cenários
 *** Test Cases ***
 Cenario 01: GET Listar Todos os Carrinhos 200
-    [Tags]     GETALLCARS
+    [Tags]     GET_ALL_CARS
     GET Endpoint /carrinhos
     Validar Status Code "200"
     
     
 Cenario 02: POST Criar Carrinho 201
-    [Tags]    POSTCAR201    
+    [Tags]    POST_CAR_201    
     Fazer Login e Armazenar Token
     DELETE Endpoint /carrinhos/concluir-compra
     Criar Carrinho Estatico Valido
     Validar Status Code "201"
     Validar Ter Criado o Carrinho
     DELETE Endpoint /carrinhos/concluir-compra
+    
 
 Cenario 03: POST Criar Carrinho 400
-    [Tags]    POSTCAR400
+    [Tags]    POST_CAR_400
     Fazer Login e Armazenar Token
     Criar Carrinho Estatico Valido
     Criar Carrinho Estatico Valido
@@ -31,34 +32,31 @@ Cenario 03: POST Criar Carrinho 400
     DELETE Endpoint /carrinhos/concluir-compra
 
 Cenario 04: POST Criar Carrinho Token Inválido 401
-     [Tags]    POSTCAR401
+     [Tags]    POST_CAR_401
     Selecionar Token Invalido
     Criar Carrinho Estatico Valido
     Validar Status Code "401"
 
 Cenario 05: GET Buscar Carrinho 200
-    [Tags]    GETCAR200
+    [Tags]    GET_CAR_200
     Fazer Login e Armazenar Token
     Criar Carrinho Estatico Valido
     DELETE Endpoint /carrinhos/concluir-compra
-    #Criar Carrinho Estatico Valido
-    #GET Endpoint /carrinhos/id
-    #DELETE Endpoint /carrinhos/concluir-compra
 
 Cenario 06: GET Buscar Carrinho Não Encontrado 400
-    [Tags]    GETCAR400
+    [Tags]    GET_CAR_400
     Fazer Login e Armazenar Token
     GET Endpoint Carrinho Não Encontrado
 
 Cenario 07: DELETE Carrinho Concluir Compra 200
-    [Tags]    CONCLUIRCAR200   
+    [Tags]    END_CAR_200   
     Fazer Login e Armazenar Token
     Criar Carrinho Estatico Valido
     DELETE Endpoint /carrinhos/concluir-compra
     Validar Status Code "200"
 
-Cenario 08: DELETE Carrinho Concluir Compra Token Inválido 401
-    [Tags]    CONCLUIRCAR401
+Cenario 08: DELETE Carrinho Concluir Compra 401
+    [Tags]    END_CAR_401
     Fazer Login e Armazenar Token
     Criar Carrinho Estatico Valido
     Selecionar Token Invalido
@@ -68,14 +66,14 @@ Cenario 08: DELETE Carrinho Concluir Compra Token Inválido 401
     DELETE Endpoint /carrinhos/concluir-compra
 
 Cenario 09: DELETE Carrinho Cancelar Compra 200
-    [Tags]    CANCELARCAR200
+    [Tags]    CANCEL_CAR_200
     Fazer Login e Armazenar Token
     Criar Carrinho Estatico Valido
     DELETE Endpoint /carrinhos/cancelar-compra
     Validar Status Code "200"
 
 Cenario 10: DELETE Carrinho Cancelar Compra Token Inválido 401
-    [Tags]    CANCELARCAR401
+    [Tags]    END_CAR_401
     Fazer Login e Armazenar Token
     Criar Carrinho Estatico Valido
     Selecionar Token Invalido

@@ -5,6 +5,12 @@
         "password": "eupassei",
         "administrador": "true"
     },
+    "user_valido_sem_adm": {
+        "nome": "EU SOU VALIDO",
+        "email": "eusouvalido@gmail.com.br",
+        "password": "eupassei",
+        "administrador": ""
+    },
     "user_email_cadastrado": {
     
         "nome": "User110",

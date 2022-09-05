@@ -13,22 +13,8 @@ Criar Carrinho Estatico Valido
     Log To Console             Response: ${payload}
     POST Endpoint /carrinhos
 
-
-Criar Um Carrinho e Armazenar ID
-    Criar Carrinho Estatico Valido
-    Validar Ter Criado o Carrinho
-    ${id_carrinho}                    Set Variable                        ${response.json()["_id"]}   
-    Log To Console                    ID Carrinho: ${id_carrinho}
-    Set Global Variable               ${id_carrinho}
-
 GET Endpoint /carrinhos
     ${response}               GET On Session        serverest        /carrinhos
-    Set Global Variable       ${response}
-    Log To Console            Response: ${response.content}
-
-GET Endpoint /carrinhos/id
-    
-    ${response}               GET On Session        serverest        /carrinhos/${id_carrinho}    expected_status=any
     Set Global Variable       ${response}
     Log To Console            Response: ${response.content}
 
@@ -58,9 +44,3 @@ Validar Ter Criado o Carrinho
     Should Be Equal            ${response.json()["message"]}    Cadastro realizado com sucesso
     Should Not Be Empty        ${response.json()["_id"]} 
 
-Validar Se Carrinho Contém IdProduto "${idProduto}"
-    Should Contain          ${response.json()["carrinhos"][0]["produtos"][0]["idProduto"]}    ${idProduto}
-    Log To Console          Carrinho contém IdProduto: ${response.json()["carrinhos"][0]["produtos"][0]["idProduto"]}
-
-Validar Se Carrinho Foi Excluido 
-    Should Not Contain          ${response.json()["carrinhos"][0]["_id"]}    ${id_carrinho}
