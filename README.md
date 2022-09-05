@@ -43,29 +43,26 @@
                                                                                                    
 
 ````sh
-    - Abra o Prompt de Comando e digite:
+    - Logo após o dowload para ter certeza que o Python foi instalado abra o Prompt de Comando e digite:
 
     - python --version
    
     - pip --version
 ````
+
 ### Etapa 2: 
-🤖 [Robot Framework](https://robotframework.org/)
+🤖 [Link dowload Robot Framework](https://robotframework.org/)
 
 ````sh
 - Abra o Prompt de Comando e digite:
    
 - pip install robotframework
+ 
+ * Logo após, para ter certeza que o Robot foi instalado digite:
 
 - robot --version
 ````
 
-
-
-
-Etapa 4: verificar se a estrutura do robô está instalada corretamente
-
-pip show robotframework
 
 ***
 
@@ -74,10 +71,15 @@ pip show robotframework
 ### 🤖​ Execução dos testes robot  
 
 ```
-- robot -d ./reports -i "nome da [TAG]" base.robot 
+- Para rodar todos os testes de uma única vez digite no terminal:
+  
+  * robot -d ./reports ./tests 
 
+- Para rodar um teste por vez digite no terminal:
+
+  * robot -d ./reports -i [TAG] ./tests/usuarios_tests.robot 
 ```
-## ​⬆️​ Implemetação do codigo no git 
+## ​⬆️​ Implemetação do codigo no GIT 
 
 como realizar os PR's para atualização do projeto:
 
