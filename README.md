@@ -138,12 +138,13 @@ Copyright © 2022 [Compass](https://compass.uol/).<br />
 ## 🎞️​ Créditos
 
 <p>Agradeço a Compass.uol por nos proporcionar esta trilha de aprendizado, disponibilizando seus proficionais Demétrio Webber Barreto, Larissa Campos, Gabriela Andrade dos Santos e Matheus Domingos Locatelli que nos conduziram e auxiliaram com os conteúdos. Agradeço aos companheiros de estágio Paulo Henrique Conte, Pedro Favareto Gaya, Laura Gehrke. Um agradecimento especial a Manoella 
-Souza por disponibilizar a condicional que usei no código.</p>
+Souza por disponibilizar a condicional que usei no código.</p> 
 
 * Ajuda construção readme | Git | Github [Carlos Eduardo Piva](https://github.com/PivaCarlos)
 * Ajuda construção código | Git | Github [Paulo Henrique Conte](https://github.com/phconte)
 * Ajuda construção código | Git | Github [Manoella Souza](https://github.com/manoellasouza)
 * Ajuda construção código | Git | Github [Laura Gehrke](https://github.com/lauraghrk)
+* Ajuda construção código | Git | Github [Pedro Favareto Gaya](https://github.com/PFrek)
 * RobotFramework [Testes](http://robotframework.org/).<br />
 * Git Documentation [Documentação Git](https://git-scm.com/doc).<br />
 * Serverest API  https://serverest.dev
