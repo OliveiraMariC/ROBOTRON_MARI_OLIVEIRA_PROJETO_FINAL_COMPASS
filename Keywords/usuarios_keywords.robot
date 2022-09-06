@@ -11,7 +11,7 @@ GET Endpoint /usuarios
     Set Global Variable                               ${response}
 
 GET Endpoint /usuarios ID
-    ${response}            GET On Session    serverest    /usuarios/${id}    expected_status=any
+    ${response}            GET On Session    serverest    /usuarios/pSLqtHmun9aVzbz8   expected_status=any
     Log To Console                           Resposta: ${response.content}
     Set Global Variable                                ${response}
 GET Endpoint /usuarios ID 400
@@ -43,9 +43,6 @@ DELETE Endpoint /usuarios 400
     ${response}            DELETE On Session    serverest           /usuarios/oUb7aGkMtSEPf6BZ                    expected_status=any
     Log To Console                              Resposta: ${response.content}
     Set Global Variable                                   ${response}
-Trazer Quantidade Usuarios
-    ${quantidade}          Buscar Quantidade Usuarios Cadastrado 
-    Log To Console        ${quantidade} 
 
 Dados Usuario Estatico Email Cadastrado
     ${json}                Importar JSON Estatico        json_usuarios_ex.json

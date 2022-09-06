@@ -1,45 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220905 22:33:06.665" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220906 13:09:08.878" rpa="false" schemaversion="3">
 <suite id="s1" name="Robotron Mari Oliveira Projeto Final Compass" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass">
-<suite id="s1-s1" name="Suporte" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\suporte">
-<suite id="s1-s1-s1" name="Mari Custom Library Python" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\suporte\Mari_Custom_Library_Python">
-<suite id="s1-s1-s1-s1" name="Mari Custom Library" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\suporte\Mari_Custom_Library_Python\Mari_Custom_Library.robot">
-<test id="s1-s1-s1-s1-t1" name="Converter Arquivo JSON Para HASH sha256" line="6">
-<kw name="Gerar Hash Dict" library="library_tests">
-<var>${json}</var>
-<arg>(conteudo)</arg>
-<msg timestamp="20220905 22:33:07.110" level="INFO">Conteúdo: (conteudo)
-Hash gerado: b0581df3152d41c12f166a4a1f54c10bcb5550c480031d79a065d3e2c86d0be2</msg>
-<msg timestamp="20220905 22:33:07.112" level="INFO">${json} = b0581df3152d41c12f166a4a1f54c10bcb5550c480031d79a065d3e2c86d0be2</msg>
-<status status="PASS" starttime="20220905 22:33:07.110" endtime="20220905 22:33:07.114"/>
+<suite id="s1-s1" name="Mari Custom Library Python" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\Mari_Custom_Library_Python">
+<suite id="s1-s1-s1" name="Mari Custom Library" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\Mari_Custom_Library_Python\Mari_Custom_Library.robot">
+<test id="s1-s1-s1-t1" name="Quantidade Total Usuarios" line="15">
+<kw name="Buscar Qantidade Usuarios Cadastrados" library="library_tests">
+<var>${QTD}</var>
+<msg timestamp="20220906 13:09:09.038" level="FAIL">KeyError: 'quantidade'</msg>
+<status status="FAIL" starttime="20220906 13:09:09.028" endtime="20220906 13:09:09.040"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${json}</arg>
+<arg>${QTD}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220905 22:33:07.114" endtime="20220905 22:33:07.114"/>
+<status status="NOT RUN" starttime="20220906 13:09:09.040" endtime="20220906 13:09:09.040"/>
 </kw>
-<status status="PASS" starttime="20220905 22:33:07.108" endtime="20220905 22:33:07.115"/>
+<status status="FAIL" starttime="20220906 13:09:09.026" endtime="20220906 13:09:09.041">KeyError: 'quantidade'</status>
 </test>
 <doc>Arquivo de Testes para Library PYTHON</doc>
-<status status="PASS" starttime="20220905 22:33:06.710" endtime="20220905 22:33:07.117"/>
+<status status="FAIL" starttime="20220906 13:09:08.918" endtime="20220906 13:09:09.044"/>
 </suite>
-<status status="PASS" starttime="20220905 22:33:06.703" endtime="20220905 22:33:07.121"/>
+<status status="FAIL" starttime="20220906 13:09:08.914" endtime="20220906 13:09:09.049"/>
 </suite>
-<status status="PASS" starttime="20220905 22:33:06.700" endtime="20220905 22:33:07.124"/>
-</suite>
-<status status="PASS" starttime="20220905 22:33:06.670" endtime="20220905 22:33:07.127"/>
+<status status="FAIL" starttime="20220906 13:09:08.883" endtime="20220906 13:09:09.053"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Robotron Mari Oliveira Projeto Final Compass">Robotron Mari Oliveira Projeto Final Compass</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Suporte">Robotron Mari Oliveira Projeto Final Compass.Suporte</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Mari Custom Library Python">Robotron Mari Oliveira Projeto Final Compass.Suporte.Mari Custom Library Python</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Mari Custom Library">Robotron Mari Oliveira Projeto Final Compass.Suporte.Mari Custom Library Python.Mari Custom Library</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robotron Mari Oliveira Projeto Final Compass">Robotron Mari Oliveira Projeto Final Compass</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Mari Custom Library Python">Robotron Mari Oliveira Projeto Final Compass.Mari Custom Library Python</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Mari Custom Library">Robotron Mari Oliveira Projeto Final Compass.Mari Custom Library Python.Mari Custom Library</stat>
 </suite>
 </statistics>
 <errors>

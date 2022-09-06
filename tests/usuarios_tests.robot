@@ -14,7 +14,6 @@ Suite Setup    Criar Sessao
 Cenario 01: GET Todos os Usuarios 200
     [Tags]    BUSCAR TODOS USUARIOS 200
     GET Endpoint /usuarios
-    Trazer Quantidade Usuarios
     Validar Status Code "200"
     Validar Razao "OK"
 
@@ -25,11 +24,20 @@ Cenário 02: GET Buscar Usuario por ID 200
     Validar Status Code "200"
 
 Cenário 03: GET Buscar Usuario por ID 400
-    [Tags]    BUSCAR USUARIO POR ID 400
+    [Tags]    BUSCAR USUARIO ID NAO ENCONTRADO 400
     GET Endpoint /usuarios ID 400
     Validar Message "Usuário não encontrado"
     Validar Status Code "400"
     Validar Razao "Bad Request"
+
+Cenario 08: POST Cadastrar Usuario Dinamico 201
+    [Tags]    USUARIO CADASTRO MD 201
+    Criar Usuario Dinamico Admin 
+    POST Endpoint /usuarios
+    Validar Status Code "201"
+    DELETE Endpoint /usuarios
+    Validar Status Code "200"
+    Validar Razao "OK"
 
 Cenário 04: POST Cadastrar Usuario Massa Estatica 400
     [Tags]    CADASTRAR USUARIO ME 400
@@ -49,22 +57,12 @@ Cenário 06: POST Cadastrar Usuario Massa Estatica Sem Senha
     POST Endpoint /usuarios
     Validar Status Code "400"
 
-# não tem rota e não tem  json-se validar mensagem não passa
 Cenário 07: POST Cadastrar Usuario Massa Estatica Sem Admin
     [Tags]    USUARIO ME CADASTRO SEM ADMIN 400
     Dados Usuario Estatico Sem Admin
     POST Endpoint /usuarios
     Validar Status Code "400"
 
-Cenario 08: POST Cadastrar Usuario Dinamico 201
-    [Tags]    USUARIO CADASTRO DINAMICO 201
-    Criar Usuario Dinamico Admin 
-    POST Endpoint /usuarios
-    Validar Status Code "201"
-    DELETE Endpoint /usuarios
-    Validar Status Code "200"
-    Validar Razao "OK"
-  
 Cenário 09: PUT Alterar Usuario 200
     [Tags]    USUARIO ALTERADO 200
     Criar Usuario Dinamico Admin
@@ -76,8 +74,16 @@ Cenário 09: PUT Alterar Usuario 200
     DELETE Endpoint /usuarios
     Validar Status Code "200"
     Validar Razao "OK"
-
-#traz status code 405 e não 400
+#ELE CADASTRA E NAO ALTERA
+Cenário 09: PUT Alterar Usuario 201
+    [Tags]    USUARIO PUT 201
+    Criar Usuario Dinamico Admin
+    POST Endpoint /usuarios
+    DELETE Endpoint /usuarios
+    PUT Endpoint /usuarios
+    Validar Status Code "201" 
+    Validar Message "Cadastro realizado com sucesso"
+    
 Cenário 10: PUT Cadastrar Usuario Massa Estatica 400
     [Tags]    CADASTRAR USUARIO ME 400
     Dados Usuario Estatico Email Cadastrado

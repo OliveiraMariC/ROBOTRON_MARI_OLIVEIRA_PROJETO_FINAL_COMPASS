@@ -4,7 +4,6 @@ Documentation        Arquivo simples para requisições HTTP em APIs REST
 Library              RequestsLibrary
 Library              Collections
 Library              OperatingSystem
-Library              ./Mari_Custom_Library_Python/library_tests.py
 Library              FakerLibrary
 #Importando tudo o que está na pasta suporte para dentro do arquivo base:
 Resource             ./common/common.robot       
