@@ -19,6 +19,7 @@
 
 <p align="justify">
  Projeto de automação de API com ROBOTFRAMEWORK oferecido pela empresa COMPASS.UOL e tem como finalidade trazer a evolução de cada um dos envolvidos ao longo da trilha.
+
 ***
 <h3 align="center">Especificações Tecnicas sobre o projeto:</h3>
 
@@ -61,15 +62,15 @@
 
 - robot --version
  
-  * Libraries:
+ * Libraries:
 
- - robotframework-faker 
+- robotframework-faker 
  
- - robotframework-browser 
+- robotframework-browser 
 
- - robotframework-requests 
+- robotframework-requests 
  
- - pandas 
+- pandas 
                                                                                                                    
 ````
 ### Etapa 3:
@@ -81,8 +82,23 @@
 ````         
 ***
 
+### Etapa 4:
 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" height = "60" width = "60"  />[Link dowload Git](https://git-scm.com/download/win)
+ ````sh
+- Abra o Prompt de Comando e digite:
 
+- git
+````          
+ ### Etapa 5:
+
+[Link Serverest Local](https://localhost:3000) 
+               
+ ````sh
+- Abra o Prompt de Comando e digite:
+
+- npx serverest
+````
 ### 🤖​ Execução dos testes robot  
 
 ```
@@ -116,9 +132,15 @@ como realizar os PR's para atualização do projeto:
 ## 📝 Licença
 
 Copyright © 2022 [Mari Cristina de Oliveira](https://github.com/OliveiraMariC).<br />
-Copyright © 2022 [Compass](https://compass.uol/).<br /> 
+Copyright © 2022 [Compass](https://compass.uol/).<br />
+
+
 
 ## 🎞️​ Créditos
+
+<p> Agradeço a Compass.uol por nos proporcionar esta trilha de aprendizado, disponibilizando seus proficionais Demétrio Webber Barreto, Larissa Campos, Gabriela Andrade dos Santos e Matheus Domingos Locatelli que nos conduziram e auxiliaram com os conteúdos. Agradeço aos companheiros de estágio Paulo Henrique Conte, Pedro Favareto Gaya, Laura Gehrke. Um agradecimento especial a Manoella 
+Souza por disponibilizar a condicional que usei no código.</p>
+
 * Ajuda construção readme | Git | Github [Carlos Eduardo Piva](https://github.com/PivaCarlos)
 * Ajuda construção código | Git | Github [Cléo Cordeiro](https://github.com/CleoCordeiro)
 * RobotFramework [Testes](http://robotframework.org/).<br />
