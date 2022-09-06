@@ -142,7 +142,8 @@ Copyright © 2022 [Compass](https://compass.uol/).<br />
 Souza por disponibilizar a condicional que usei no código.</p>
 
 * Ajuda construção readme | Git | Github [Carlos Eduardo Piva](https://github.com/PivaCarlos)
-* Ajuda construção código | Git | Github [Cléo Cordeiro](https://github.com/CleoCordeiro)
+* Ajuda construção código | Git | Github [Paulo Henrique Conte](https://github.com/phconte)
+* Ajuda construção código | Git | Github [Manoella Souza](https://github.com/phconte)
 * RobotFramework [Testes](http://robotframework.org/).<br />
 * Git Documentation [Documentação Git](https://git-scm.com/doc).<br />
 * Serverest API  https://serverest.dev
