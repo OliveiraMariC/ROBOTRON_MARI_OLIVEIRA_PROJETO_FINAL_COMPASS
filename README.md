@@ -1,6 +1,5 @@
 ![WhatsApp Image 2022-08-18 at 07 45 24](https://user-images.githubusercontent.com/109982238/185379325-04fa7f29-f0ea-4146-a565-a7edf5680267.jpeg)
-***
-![Python](https://img.shields.io/pypi/pyversions/p) [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/) ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=development&color=GREEN&style=for-the-badge)
+![Python](https://img.shields.io/pypi/pyversions/p) [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/) 
                
           
 ***
@@ -61,9 +60,15 @@
  * Logo após, para ter certeza que o Robot foi instalado digite:
 
 - robot --version
+
 ````
+### Etapa 3:
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg" height = "80" width = "80"/>[Link dowload Nodejs](https://nodejs.org/en/download/)
+ ````sh
+- Abra o Prompt de Comando e digite:
 
-
+- node
+````         
 ***
 
 
