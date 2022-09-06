@@ -60,7 +60,17 @@
  * Logo após, para ter certeza que o Robot foi instalado digite:
 
 - robot --version
+ 
+  * Libraries:
 
+ - robotframework-faker 
+ 
+ - robotframework-browser 
+
+ - robotframework-requests 
+ 
+ - pandas 
+                                                                                                                   
 ````
 ### Etapa 3:
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg" height = "80" width = "80"/>[Link dowload Nodejs](https://nodejs.org/en/download/)
