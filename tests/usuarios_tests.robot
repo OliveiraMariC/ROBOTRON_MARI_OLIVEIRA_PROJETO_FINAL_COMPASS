@@ -82,7 +82,7 @@ Cenário 10: PUT Cadastrar Usuario Massa Estatica 400
     [Tags]    CADASTRAR USUARIO ME 400
     Dados Usuario Estatico Email Cadastrado
     PUT Endpoint /usuarios 
-    Validar Status Code "405"
+    Validar Status Code "400"
 
 Cenário 11: DELETE Usuario ID 200
     [Tags]    USUARIO DELETE 200

@@ -14,5 +14,11 @@
     "user_sem_email": {
         "email":"",
         "senha":"NAOTENHOEMAIL"
+    },
+    "user_sem_admin": {
+        
+        "email": "user9@gmail.com",
+        "password": "user3"
+    
     }
 }

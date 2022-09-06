@@ -42,14 +42,6 @@ DELETE Endpoint /produtos
     Set Global Variable                                                                  ${response}
 
 
-         
-
-
-Validar Quantidade Produtos
-    ${quantidade}    Buscar Quantidade Produtos Cadastrados
-    Log to Console    ${quantidade}
-
-
 Dados Produto Estatico "${produto}"
     ${json}    Importar JSON Estatico    json_produtos_ex.json
     ${payload}    Set variable    ${json["${produto}"]}
@@ -60,6 +52,5 @@ Produto ID Em carrinho
     ${id_produto}    Set Variable    BeeJh5lz3k6kSIzA
     Set Global Variable    ${id_produto}
     Set Global Variable    ${id_produto}
-Apagar Produto                
-    ${response}    DELETE On Session    serverest       /produtos/LQzJj8sJv93TXsYQ          expected_status=any    
-    Log To Console        Response:${response.content}   
+
+  

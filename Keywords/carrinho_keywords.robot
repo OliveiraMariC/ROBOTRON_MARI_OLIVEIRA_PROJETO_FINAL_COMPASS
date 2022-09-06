@@ -12,9 +12,14 @@ Criar Carrinho Estatico Valido
     Set Global Variable        ${payload} 
     Log To Console             Response: ${payload}
     POST Endpoint /carrinhos
-
+    
 GET Endpoint /carrinhos
     ${response}               GET On Session        serverest        /carrinhos
+    Set Global Variable       ${response}
+    Log To Console            Response: ${response.content}
+
+GET Endpoint /carrinhos ID
+    ${response}               GET On Session        serverest        /carrinhos/qbMqntef4iTOwWfg
     Set Global Variable       ${response}
     Log To Console            Response: ${response.content}
 
@@ -44,3 +49,4 @@ Validar Ter Criado o Carrinho
     Should Be Equal            ${response.json()["message"]}    Cadastro realizado com sucesso
     Should Not Be Empty        ${response.json()["_id"]} 
 
+#############################################

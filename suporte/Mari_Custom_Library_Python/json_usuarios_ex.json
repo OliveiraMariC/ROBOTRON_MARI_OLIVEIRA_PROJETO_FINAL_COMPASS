@@ -5,7 +5,12 @@
         "password": "eupassei",
         "administrador": "true"
     },
-    
+    "user_valido_sem_adm": {
+        "nome": "EU SOU VALIDO",
+        "email": "eusouvalido@gmail.com.br",
+        "password": "eupassei",
+        "administrador": "false"
+    },
     "user_email_cadastrado": {
     
         "nome": "User110",
@@ -18,7 +23,7 @@
         "nome": "EU NÃO EXISTO",
         "email": "eunaosouvalido",
         "password": "EUQUEROPASSAR",
-         "administrador":"true"
+        "administrador": "false"
     },
     "user_sem_senha": {
         "nome": "EU NÃO TENHO SENHA",

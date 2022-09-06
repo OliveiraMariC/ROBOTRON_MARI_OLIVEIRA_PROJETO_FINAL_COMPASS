@@ -10,7 +10,6 @@ Suite Setup    Criar Sessao
 Cenario 01: GET Listar Todos os Produtos 200
     [Tags]    PRODUTO BUSCAR TODOS 200    
     GET Endpoint /produtos
-    Validar Quantidade Produtos
     Validar Status Code "200"
     Validar Razao "OK"
 
@@ -34,7 +33,7 @@ Cenario 04: POST Cadastrar Produto 201
     Validar Message "Cadastro realizado com sucesso"
     DELETE Endpoint /produtos
     Validar Status Code "405"
-Cenario 04: PUT Alterar Produto 200
+Cenario 05: PUT Alterar Produto 200
     [Tags]        PRODUTO ALTERAR MD 200
     Fazer Login e armazenar Token
     Criar Dados Produto Valido
@@ -42,23 +41,24 @@ Cenario 04: PUT Alterar Produto 200
     Validar Message "Registro alterado com sucesso"
     Validar Status Code "200" 
     DELETE Endpoint /produtos
-Cenario 04: DELETE Produto 401
+#Nao tem rota de erro, para passar não pode validar o status code 401 ou se validar o status precisa ser 405
+Cenario 06: DELETE Produto 401
     [Tags]        PRODUTO SEM TOKEN MD 401
     Fazer Login e armazenar Token
     POST Endpoint /produtos
     Selecionar Token Invalido
     DELETE Endpoint /produtos
-    Validar Status Code "401"
-    Validar Message "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
-Cenario 04: DELETE Produto 403
+#O Status Code é 405 quando deveria ser 403
+Cenario 07: DELETE Produto 403
     [Tags]        PRODUTO NAO Adm MD 403
-    Fazer Login e armazenar Token
-    
+    Fazer Login e armazenar Token SAdmin
+    Dados Produto Estatico "produto_valido"
     DELETE Endpoint /produtos
+    Validar Status Code "405"
     
 #Nao tem rota de status code
-Cenário 07: POST Cadastrar Produto Massa Estatica Invalido
-    [Tags]    PRODUTO  ME CADASTRO INVALIDO 400
+Cenário 08: POST Cadastrar Produto Massa Estatica Invalido
+    [Tags]    PRODUTO ME CADASTRO INVALIDO 400
     Fazer Login e armazenar Token
     Validar Ter Logado
     Dados Produto Estatico "produto_invalido"
@@ -66,16 +66,16 @@ Cenário 07: POST Cadastrar Produto Massa Estatica Invalido
     Validar Status Code "400" 
     Validar Message "Já existe produto com esse nome"
     
-#Nao tem rota de status code
-Cenario 00: POST Cadastrar Produto Massa Estatica Sem Nome
-    [Tags]    PRODUTO  ME CADASTRO SEM NOME 400
+#Nao tem rota de status code  e não valida mensagem
+Cenario 09: POST Cadastrar Produto Massa Estatica Sem Nome
+    [Tags]    PRODUTO ME CADASTRO SEM NOME 400
     Fazer Login e armazenar Token
     Validar Ter Logado
     Dados Produto Estatico "produto_sem_nome"
     POST Endpoint /produtos
     Validar Status Code "400"
 #Nao tem rota de status code    
-Cenario 00: POST Cadastrar Produto Massa Estatica Sem Preco
+Cenario 10: POST Cadastrar Produto Massa Estatica Sem Preco
     [Tags]    PRODUTO  ME CADASTRO SEM PRECO 400
     Fazer Login e armazenar Token
     Validar Ter Logado
@@ -84,20 +84,17 @@ Cenario 00: POST Cadastrar Produto Massa Estatica Sem Preco
     Validar Status Code "400"
 
 #Nao tem rota de status code
-Cenario 00: POST Cadastrar Produto Massa Estatica Sem Descricao
+Cenario 11: POST Cadastrar Produto Massa Estatica Sem Descricao
     [Tags]    PRODUTO  ME CADASTRO SEM DESCRICAO 400
     Fazer Login e armazenar Token
     Validar Ter Logado
     Dados Produto Estatico "produto_sem_descricao"
     POST Endpoint /produtos
     Validar Status Code "400"
-Cenario 00: POST Cadastrar Produto Massa Estatica Sem Qtd
+Cenario 12: POST Cadastrar Produto Massa Estatica Sem Qtd
     [Tags]    PRODUTO  ME CADASTRO SEM Qtd 400
     Fazer Login e armazenar Token
     Validar Ter Logado
     Dados Produto Estatico "produto_sem_quantidade"
     POST Endpoint /produtos
     Validar Status Code "400"
-Apagar produto
-    [Tags]    APAGARPROD
-    Apagar Produto

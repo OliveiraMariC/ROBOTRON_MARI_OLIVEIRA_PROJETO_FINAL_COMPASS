@@ -19,7 +19,7 @@ Importar JSON Estatico
 
 
 Selecionar Token Invalido
-    ${token_auth}             Set Variable        12563737   
+    ${token_auth}             Set Variable        Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV1c291dmFsaWRvQHFhL  
     Set Global Variable       ${token_auth}
 
 Validar Message "${message}"    
