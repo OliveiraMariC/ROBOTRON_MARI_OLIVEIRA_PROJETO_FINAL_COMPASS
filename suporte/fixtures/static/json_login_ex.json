@@ -1,0 +1,24 @@
+{
+    "user_valido": {
+        "email":"eusouvalido@qa.com.br",
+        "password":"eupassei"
+    },
+    "user_invalido": {
+        "email":"eusouvalido@gmail.com",
+        "senha":"EUNAOPASSO"
+    },
+    "user_sem_senha": {
+        "email":"euqueropassar@gmail.com",
+        "senha":""
+    },
+    "user_sem_email": {
+        "email":"",
+        "senha":"NAOTENHOEMAIL"
+    },
+    "user_sem_admin": {
+        
+        "email": "user9@gmail.com",
+        "password": "user3"
+    
+    }
+}

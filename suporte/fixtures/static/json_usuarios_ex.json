@@ -1,0 +1,41 @@
+{
+    "user_valido": {
+        "nome": "EU SOU VALIDO",
+        "email": "eusouvalido@gmail.com.br",
+        "password": "eupassei",
+        "administrador": "true"
+    },
+    
+    "user_email_cadastrado": {
+    
+        "nome": "User110",
+        "email": "user110@gmail.com",
+        "password": "user103",
+        "administrador": "true"  
+    },
+    
+    "user_invalido": {
+        "nome": "EU NÃO EXISTO",
+        "email": "eunaosouvalido",
+        "password": "EUQUEROPASSAR",
+         "administrador":"true"
+    },
+    "user_sem_senha": {
+        "nome": "EU NÃO TENHO SENHA",
+        "email": "achoquenaovaipassar@qa.com.br",
+        "password": "",
+        "administrador": "true"
+    },
+    "user_sem_email": {
+        "nome": "EU NÃO TENHO EMAIL",
+        "email": "",
+        "password": "NAOVOUPASSAR",
+        "administrador": "true"
+    },
+    "user_sem_admin":{
+        "nome": "EU NÃO ADMINISTRO NADA",
+        "email": "",
+        "password": "NAOVOUPASSAR",
+        "administrador": "" 
+    }
+}

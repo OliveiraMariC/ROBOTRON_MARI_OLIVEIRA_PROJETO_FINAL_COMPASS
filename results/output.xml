@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220906 13:09:08.878" rpa="false" schemaversion="3">
+<suite id="s1" name="Robotron Mari Oliveira Projeto Final Compass" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass">
+<suite id="s1-s1" name="Mari Custom Library Python" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\Mari_Custom_Library_Python">
+<suite id="s1-s1-s1" name="Mari Custom Library" source="C:\Users\Meuacer2021\Dropbox\PC\Desktop\Robotron_Mari_Oliveira_Projeto_Final_Compass\Mari_Custom_Library_Python\Mari_Custom_Library.robot">
+<test id="s1-s1-s1-t1" name="Quantidade Total Usuarios" line="15">
+<kw name="Buscar Qantidade Usuarios Cadastrados" library="library_tests">
+<var>${QTD}</var>
+<msg timestamp="20220906 13:09:09.038" level="FAIL">KeyError: 'quantidade'</msg>
+<status status="FAIL" starttime="20220906 13:09:09.028" endtime="20220906 13:09:09.040"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${QTD}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220906 13:09:09.040" endtime="20220906 13:09:09.040"/>
+</kw>
+<status status="FAIL" starttime="20220906 13:09:09.026" endtime="20220906 13:09:09.041">KeyError: 'quantidade'</status>
+</test>
+<doc>Arquivo de Testes para Library PYTHON</doc>
+<status status="FAIL" starttime="20220906 13:09:08.918" endtime="20220906 13:09:09.044"/>
+</suite>
+<status status="FAIL" starttime="20220906 13:09:08.914" endtime="20220906 13:09:09.049"/>
+</suite>
+<status status="FAIL" starttime="20220906 13:09:08.883" endtime="20220906 13:09:09.053"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Robotron Mari Oliveira Projeto Final Compass">Robotron Mari Oliveira Projeto Final Compass</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Mari Custom Library Python">Robotron Mari Oliveira Projeto Final Compass.Mari Custom Library Python</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Mari Custom Library">Robotron Mari Oliveira Projeto Final Compass.Mari Custom Library Python.Mari Custom Library</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
