@@ -152,10 +152,6 @@ como realizar os PR's para atualização do projeto:
 * Github: [@OliveiraMariC](https://github.com/OliveiraMariC)
 * LinkedIn: [@MariCristinaDeOliveira](https://www.linkedin.com/in//maricristinadeoliveira/)
 
-## 📝 Licença
-
-Copyright © 2022 [Mari Cristina de Oliveira](https://github.com/OliveiraMariC).<br />
-Copyright © 2022 [Compass](https://compass.uol/).<br />
 
 
 ## 🎞️​ Créditos
