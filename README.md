@@ -26,6 +26,7 @@
 
 ## 📃​ Pré requisitos:
 
+
 ````sh
  - Python >  3.8.2
 
@@ -40,6 +41,8 @@
 
 
 ### Etapa 1: 
+<br/>
+
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" /> [Link dowload Python]( https://www.python.org/downloads/)
                                                                                                    
 
@@ -51,10 +54,13 @@
     - pip --version
 ````
 
+
 ### Etapa 2: 
+<br/>
 
 🤖 [Robot Framework](https://robotframework.org/)
-
+<br/>
+                                                                                                                   
 ````sh
 - Abra o Prompt de Comando e digite:
    
@@ -75,35 +81,45 @@
 - pandas 
                                                                                                                    
 ````
+
 ### Etapa 3:
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg" height = "80" width = "80"/>[Link dowload Nodejs](https://nodejs.org/en/download/)
- ````sh
+
+````sh
 - Abra o Prompt de Comando e digite:
 
 - node
+                                                                                                                         
 ````         
 
 ### Etapa 4:
+<br/><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" height = "60" width = "60"/>[Link dowload Git](https://git-scm.com/download/win)
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain-wordmark.svg" height = "60" width = "60"  />[Link dowload Git](https://git-scm.com/download/win)
- ````sh
+````sh
 - Abra o Prompt de Comando e digite:
 
 - git
-````          
+                                                                                                                   
+```` 
+                                                                                                                   
  ### Etapa 5:
-
- <img alt="Logo do ServeRest" src="https://user-images.githubusercontent.com/29241659/115161869-6a017e80-a076-11eb-9bbe-c391eff410db.png" height="30">[Link Serverest Local](https://localhost:3000) 
+<br/>
+<img alt="Logo do ServeRest" src="https://user-images.githubusercontent.com/29241659/115161869-6a017e80-a076-11eb-9bbe-c391eff410db.png" height = "30"/>  
                
  ````sh
+                                                                                                                                                     
 - Abra o Prompt de Comando e digite:
 
-- npx serverest
-  - O prompt deve permanecer aberto durante todo o processo de testes e possíveis alterações.
+- npx serverest para baixar a API local
+                                                                                                                                                     
+  * Quando a API rodar localmente o prompt deverá permanecer aberto durante todo o processo de testes e possíveis alterações.
+                                                                                                                                                     
 ````
+                                                                                                                                                     
 ### 🤖​ Execução dos testes robot  
 
 ```sh
+                                                                                                                                                     
 - Para rodar todos os testes de uma única vez digite no terminal:
   
   * robot -d ./reports ./tests 
@@ -114,11 +130,13 @@
   * robot -d ./reports -i [TAG] ./tests/carrinho_tests.robot                                                                                                             * robot -d ./reports -i [TAG] ./tests/login_tests.robot
   * robot -d ./reports -i [TAG] ./tests/produtos_tests.robot                                                                                                                 
 ```
+                                                                                                                                                     
 ## ​⬆️​ Implemetação do codigo no git 
 
 como realizar os PR's para atualização do projeto:
 
 ```sh
+                                                                                                                                                     
 - git checkout -b "nome_da_branch"
 
 - git commit -m "mensagem do commit"
@@ -126,12 +144,13 @@ como realizar os PR's para atualização do projeto:
 - git push origin "nome_da_branch:nome_da_branch"
 
 ```
+                                                 
 ## 🙋 Autor 
 
 🙋 **Mari Cristina de Oliveira**
 
 * Github: [@OliveiraMariC](https://github.com/OliveiraMariC)
-* LinkedIn: [@ariCristinaDeOliveira](https://www.linkedin.com/in//maricristinadeoliveira/)
+* LinkedIn: [@MariCristinaDeOliveira](https://www.linkedin.com/in//maricristinadeoliveira/)
 
 ## 📝 Licença
 
@@ -141,8 +160,8 @@ Copyright © 2022 [Compass](https://compass.uol/).<br />
 
 ## 🎞️​ Créditos
 
-<p> Agradeço a Compass.uol por nos proporcionar esta trilha de aprendizado, disponibilizando seus proficionais Demétrio Webber Barreto, Larissa Campos, Gabriela Andrade dos Santos e Matheus Domingos Locatelli que nos conduziram e auxiliaram com os conteúdos. Agradeço aos companheiros de estágio Paulo Henrique Conte, Pedro Favareto Gaya, Laura Gehrke. Um agradecimento especial a Manoella 
-Souza por disponibilizar a condicional que usei no código.</p> 
+<p>Agradeço a Compass.uol por nos proporcionar esta trilha de aprendizado, disponibilizando seus proficionais Demétrio Webber Barreto, Larissa Campos, Gabriela Andrade dos Santos e Matheus Domingos Locatelli que nos conduziram e auxiliaram com os conteúdos. Agradeço aos companheiros de estágio Paulo Henrique Conte, Pedro Favareto Gaya, Laura Gehrke. Um agradecimento especial a Manoella 
+Souza por disponibilizar a condicional que usei no código.<p/> <br/>
 
 * Ajuda construção readme | Git | Github [Carlos Eduardo Piva](https://github.com/PivaCarlos)
 * Ajuda construção código | Git | Github [Paulo Henrique Conte](https://github.com/phconte)
