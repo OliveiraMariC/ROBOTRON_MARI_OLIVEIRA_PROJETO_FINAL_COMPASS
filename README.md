@@ -27,7 +27,7 @@
 ## 📃​ Pré requisitos:
 
 ````sh
- - Python >  3.8.2]
+ - Python >  3.8.2
 
  - Robot Framework > 5.0.1
 
@@ -54,7 +54,6 @@
 ### Etapa 2: 
 
 🤖 [Robot Framework](https://robotframework.org/)
->>>>>>> Develop
 
 ````sh
 - Abra o Prompt de Comando e digite:
@@ -94,59 +93,32 @@
 ````          
  ### Etapa 5:
 
-[Link Serverest Local](https://localhost:3000) 
+ <img alt="Logo do ServeRest" src="https://user-images.githubusercontent.com/29241659/115161869-6a017e80-a076-11eb-9bbe-c391eff410db.png" height="30">[Link Serverest Local](https://localhost:3000) 
                
  ````sh
 - Abra o Prompt de Comando e digite:
 
 - npx serverest
+  - O prompt deve permanecer aberto durante todo o processo de testes e possíveis alterações.
 ````
 ### 🤖​ Execução dos testes robot  
 
-```
+```sh
 - Para rodar todos os testes de uma única vez digite no terminal:
   
   * robot -d ./reports ./tests 
 
 - Para rodar um teste por vez digite no terminal:
 
-  * robot -d ./reports -i [TAG] ./tests/usuarios_tests.robot 
-```
-## ​⬆️​ Implemetação do codigo no GIT 
-=======
-
--
-````
-### Etapa 3: 
-
-✔️ [Robot F](https://robotframework.org/)
-
-Após a instalação bem feita, devemos ser capazes de ver as versões do interpretador e do robô usando a opção –version.
-
-robot --version
-rebot --version
-
-
-Etapa 4: verificar se a estrutura do robô está instalada corretamente
-
-pip show robotframework
-
-***
-
-
-
-### ✔️​ Execução dos testes robot  
-
-```
-- robot -d ./reports -i "nome da [TAG]" base.robot 
-
+  * robot -d ./reports -i [TAG] ./tests/usuarios_tests.robot
+  * robot -d ./reports -i [TAG] ./tests/carrinho_tests.robot                                                                                                             * robot -d ./reports -i [TAG] ./tests/login_tests.robot
+  * robot -d ./reports -i [TAG] ./tests/produtos_tests.robot                                                                                                                 
 ```
 ## ​⬆️​ Implemetação do codigo no git 
->>>>>>> Develop
 
 como realizar os PR's para atualização do projeto:
 
-```
+```sh
 - git checkout -b "nome_da_branch"
 
 - git commit -m "mensagem do commit"
@@ -164,13 +136,12 @@ como realizar os PR's para atualização do projeto:
 ## 📝 Licença
 
 Copyright © 2022 [Mari Cristina de Oliveira](https://github.com/OliveiraMariC).<br />
-<<<<<<< HEAD
 Copyright © 2022 [Compass](https://compass.uol/).<br />
 
 
 ## 🎞️​ Créditos
 
-<p>Agradeço a Compass.uol por nos proporcionar esta trilha de aprendizado, disponibilizando seus proficionais Demétrio Webber Barreto, Larissa Campos, Gabriela Andrade dos Santos e Matheus Domingos Locatelli que nos conduziram e auxiliaram com os conteúdos. Agradeço aos companheiros de estágio Paulo Henrique Conte, Pedro Favareto Gaya, Laura Gehrke. Um agradecimento especial a Manoella 
+<p> Agradeço a Compass.uol por nos proporcionar esta trilha de aprendizado, disponibilizando seus proficionais Demétrio Webber Barreto, Larissa Campos, Gabriela Andrade dos Santos e Matheus Domingos Locatelli que nos conduziram e auxiliaram com os conteúdos. Agradeço aos companheiros de estágio Paulo Henrique Conte, Pedro Favareto Gaya, Laura Gehrke. Um agradecimento especial a Manoella 
 Souza por disponibilizar a condicional que usei no código.</p> 
 
 * Ajuda construção readme | Git | Github [Carlos Eduardo Piva](https://github.com/PivaCarlos)
@@ -183,7 +154,11 @@ Souza por disponibilizar a condicional que usei no código.</p>
 * Serverest API  https://serverest.dev
 <br />
 
+## 📝 Licença
+
+Copyright © 2022 [Mari Cristina de Oliveira](https://github.com/OliveiraMariC).<br />
+Copyright © 2022 [Compass](https://compass.uol/).<br />
+
+
 ![](https://i.imgur.com/waxVImv.png)
-=======
->>>>>>> Develop
  
