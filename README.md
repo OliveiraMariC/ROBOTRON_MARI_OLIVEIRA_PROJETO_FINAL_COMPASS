@@ -116,7 +116,7 @@
                                                                                                                                                      
 ````
                                                                                                                                                      
-### 🤖​ Execução dos testes robot  
+### 🤖​ Execução dos testes robot ▶️ 
 
 ```sh
                                                                                                                                                      
