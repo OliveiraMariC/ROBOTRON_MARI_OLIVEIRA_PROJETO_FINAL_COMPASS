@@ -1,5 +1,5 @@
 ![WhatsApp Image 2022-08-18 at 07 45 24](https://user-images.githubusercontent.com/109982238/185379325-04fa7f29-f0ea-4146-a565-a7edf5680267.jpeg)
-![Python](https://img.shields.io/pypi/pyversions/p) ![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-brightgreen) ![Badge Nodejs](https://img.shields.io/badge/Nodejs-%2016.17.0.-brightgreen) ![Badge Robotframework](https://img.shields.io/badge/RobotFramework-%205.0.1-brightgreen) 
+![Python](https://img.shields.io/pypi/pyversions/p) ![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-brightgreen) ![Badge Nodejs](https://img.shields.io/badge/Nodejs-%2016.17.0.-brightgreen) ![Badge Robotframework](https://img.shields.io/badge/RobotFramework-%205.0.1-brightgreen) ![Badge Visual Code](https://img.shields.io/badge/VisualStudioCode-%201.71-blue) 
                
 
 
@@ -35,6 +35,8 @@
  - git >  2.35.1
 
  - Node.js > 16.14.2
+    
+ - Visual Studio Code > 1.71
 ````
 
 ## 📁​ Instalação 
@@ -115,7 +117,9 @@
   * Quando a API rodar localmente o prompt deverá permanecer aberto durante todo o processo de testes e possíveis alterações.
                                                                                                                                                      
 ````
-                                                                                                                                                     
+ ### Etapa 6:
+<br/>        
+
 ### 🤖​ Execução dos testes robot ▶️ 
 
 ```sh
