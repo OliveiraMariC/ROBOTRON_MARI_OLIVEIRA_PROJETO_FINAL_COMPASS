@@ -37,7 +37,7 @@
 
  - Node.js > 16.14.2
  
- - Visual Code > 1.71
+ - Visual Studio Code > 1.71
                   
 ````
 
