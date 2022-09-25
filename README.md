@@ -117,7 +117,6 @@
   * Quando a API rodar localmente o prompt deverá permanecer aberto durante todo o processo de testes e possíveis alterações.
                                                                                                                                                      
 ````
- ### Etapa 6:
 <br/>        
 
 ### 🤖​ Execução dos testes robot ▶️ 
