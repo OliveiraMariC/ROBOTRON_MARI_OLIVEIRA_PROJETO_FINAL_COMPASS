@@ -28,6 +28,7 @@
 
 
 ````sh
+                  
  - Python >  3.8.2
 
  - Robot Framework > 5.0.1
@@ -35,6 +36,9 @@
  - git >  2.35.1
 
  - Node.js > 16.14.2
+ 
+ - Visual Code > 1.71
+                  
 ````
 
 ## 📁​ Instalação 
