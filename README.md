@@ -1,8 +1,8 @@
 ![WhatsApp Image 2022-08-18 at 07 45 24](https://user-images.githubusercontent.com/109982238/185379325-04fa7f29-f0ea-4146-a565-a7edf5680267.jpeg)
-![Python](https://img.shields.io/pypi/pyversions/p) [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/) 
+![Python](https://img.shields.io/pypi/pyversions/p) ![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-brightgreen) ![Badge Nodejs](https://img.shields.io/badge/Nodejs-%2016.17.0.-brightgreen) ![Badge Robotframework](https://img.shields.io/badge/RobotFramework-%205.0.1-brightgreen) 
                
 
-<p align = "center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" />
+
 <p align="center">
     <p align="center">Programa de Bolsas iStudio QA - Robot Back-End <p>
      
