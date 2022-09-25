@@ -1,13 +1,8 @@
 ![WhatsApp Image 2022-08-18 at 07 45 24](https://user-images.githubusercontent.com/109982238/185379325-04fa7f29-f0ea-4146-a565-a7edf5680267.jpeg)
-<<<<<<< HEAD
 ![Python](https://img.shields.io/pypi/pyversions/p) [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/) 
                
-          
-=======
 
 <p align = "center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" />
->>>>>>> Develop
-***
 <p align="center">
     <p align="center">Programa de Bolsas iStudio QA - Robot Back-End <p>
      
@@ -20,27 +15,21 @@
 <br>
 
 ![](https://i.imgur.com/waxVImv.png)
-<<<<<<< HEAD
+
 ## Descrição do projeto 
 
 <p align="justify">
  Projeto de automação de API com ROBOTFRAMEWORK oferecido pela empresa COMPASS.UOL e tem como finalidade trazer a evolução de cada um dos envolvidos ao longo da trilha.
 
-=======
->>>>>>> Develop
 ***
-<h3 align="center">Especificações Tecnicas sobre o projeto:</h3>
+<h3 align="center">Especificações Técnicas sobre o projeto:</h3>
 
 ## 📃​ Pré requisitos:
 
-````
- - Python >  3.8.2
+````sh
+ - Python >  3.8.2]
 
-<<<<<<< HEAD
- - 🤖 Robot Framework > 5.0.1
-=======
  - Robot Framework > 5.0.1
->>>>>>> Develop
 
  - git >  2.35.1
 
@@ -51,7 +40,6 @@
 
 
 ### Etapa 1: 
-<<<<<<< HEAD
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" /> [Link dowload Python]( https://www.python.org/downloads/)
                                                                                                    
 
@@ -64,30 +52,14 @@
 ````
 
 ### Etapa 2: 
-🤖 [Link dowload Robot Framework](https://robotframework.org/)
-=======
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height = "30" width = "30" />
-
-[Python]( https://www.python.org/downloads/)
-
-````sh
-    - Abra o Prompt de Comando e digite:
-
-    - python --version
-   
-    - pip    --version
-````
-### Etapa 2: 
-
-✔️ [Robot Framework](https://robotframework.org/)
+🤖 [Robot Framework](https://robotframework.org/)
 >>>>>>> Develop
 
 ````sh
 - Abra o Prompt de Comando e digite:
    
 - pip install robotframework
-<<<<<<< HEAD
  
  * Logo após, para ter certeza que o Robot foi instalado digite:
 
@@ -111,7 +83,6 @@
 
 - node
 ````         
-***
 
 ### Etapa 4:
 
